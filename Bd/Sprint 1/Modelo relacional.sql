@@ -1,0 +1,182 @@
+-- MODELO RELACIONAL
+-- TABELAS QUE SE RELACIONAM
+-- TODA TABELA TEM UMA CHAVE PRIMÁRIA
+-- TODO COMANDO TERMINA COM ;
+-- TODO COMANDO É EM INGLÊS
+
+-- CRIAR O BANCO DE DADOS (SCHEMA OU DATABASE)
+CREATE DATABASE sptechSis;
+
+-- UTILIZAR O BANCO DE DADOS
+USE sptechSis;
+
+-- CRIAR NOSSA PRIMEIRA TABELA
+CREATE TABLE aluno (
+-- nomeCampo tipagem restrição/constraint
+ra char(8) primary key,
+nome varchar(100),
+bairro varchar(50)
+);
+
+-- DESCREVER A TABELA
+DESCRIBE aluno;
+DESC aluno;
+
+-- EXIBIR OS DADOS DA TABELA
+SELECT ra, nome, bairro FROM aluno;
+SELECT * FROM aluno;
+
+-- INSERIR DADOS NA TABELA
+INSERT INTO aluno VALUES 
+	('03231065', 'LUCAS', 'JARDIM SANTA RITA');
+
+-- INSERIR MAIS DE UM ALUNO NO MESMO COMANDO
+INSERT INTO aluno VALUES 
+	('03231004', 'GABRIEL', 'MOEMA'),
+    ('03231012', 'MARIA PAULA', 'JARDIM DONA SINHÁ'),
+    ('03231043', 'FERNANDO', 'ERMELINO'),
+    ('03231052', 'DAVI', 'CIDADE TIRADENTES');
+
+-- EXIBIR APENAS O RA E O NOME DOS ALUNOS
+SELECT ra, nome FROM aluno;
+-- EXIBIR APENAS O NOME E O BAIRRO DOS ALUNOS
+SELECT nome, bairro FROM aluno;
+-- EXIBIR APENAS O RA DOS ALUNOS
+SELECT ra FROM aluno;
+
+-- ATUALIZAR O BAIRRO DA MARIA PAULA
+SELECT * FROM aluno;
+SELECT * FROM aluno WHERE nome = 'MARIA PAULA';
+-- PODE REALIZAR O COMANDO UPDATE SEM WHERE?? NUNCA
+UPDATE aluno SET bairro = 'SÃO CAETANO' WHERE ra = '03231012';
+
+-- BONS ESTUDOS!
+
+-- AULA 2 - 14/02
+USE sptechsis;
+
+-- EXCLUIR A TABELA ALUNO
+DROP TABLE aluno;
+
+-- ctrl enter na linha 14, 30 e 34
+
+SELECT * FROM aluno;
+
+-- ADICIONAR UMA COLUNA NA TABELA ALUNO
+ALTER TABLE aluno ADD COLUMN email varchar(80) NOT NULL;
+
+DESC aluno;
+
+-- ATUALIZAR O EMAIL DOS ALUNOS
+UPDATE aluno SET email = 'gabriel@sptech.school'
+	WHERE ra = '03231004';
+    
+UPDATE aluno SET email = 'mariapaula@sptech.school'
+	WHERE ra = '03231012';
+    
+UPDATE aluno SET email = 'fernando@sptech.school'
+	WHERE ra = '03231043';
+    
+UPDATE aluno SET email = 'davi@sptech.school'
+	WHERE ra = '03231052';
+
+UPDATE aluno SET email = 'lucas@sptech.school'
+	WHERE ra = '03231065';
+
+-- ADICIONAR O CAMPO DATA DE NASCIMENTO
+ALTER TABLE aluno ADD COLUMN dtNasc DATE;
+
+DESCRIBE aluno;
+
+SELECT * FROM aluno;
+
+-- ESTRUTURA DA DATA 'AAAA-MM-DD'
+UPDATE aluno SET dtNasc = '2004-12-16'
+	WHERE ra = '03231004';
+
+-- INSERIR UM NOVO ALUNO
+INSERT INTO aluno (ra, email) VALUES
+	('03231999', 'vivian@sptech.school');
+    
+INSERT INTO aluno (ra, email, dtNasc) VALUES
+	('03231998', 'silva@sptech.school', '1983-10-13');
+    
+-- EXCLUIR UMA COLUNA DA TABELA
+ALTER TABLE aluno DROP COLUMN dtNasc;
+
+DESC aluno;
+
+SELECT * FROM aluno;
+
+
+-- MODIFICAR UMA COLUNA
+DESCRIBE aluno;
+
+ALTER TABLE aluno MODIFY COLUMN bairro varchar(75);
+
+-- RENOMEAR UMA COLUNA
+ALTER TABLE aluno RENAME COLUMN nome to nomeCompleto;
+
+
+-- alter table (add, drop, modify, rename)
+
+-- EXCLUIR UM REGISTRO/TUPLA DA TABELA
+DELETE FROM aluno WHERE ra = '03231999';
+DELETE FROM aluno WHERE ra = '03231998';
+-- DELETE FROM aluno WHERE ra = '03231999' or ra = '03231998';
+-- DELETE FROM aluno WHERE ra > '03231997';
+
+-- SELECTS MAROTOS
+SELECT ra, nomeCompleto, bairro, email FROM aluno;
+SELECT * FROM aluno;
+
+-- EXIBIR O ALUNO CUJO NOMECOMPLETO É MARIA PAULA
+SELECT * FROM aluno WHERE nomeCompleto = 'MARIA PAULA';
+
+-- EXIBIR O NOMECOMPLETO QUE COMECE COM M
+SELECT * FROM aluno WHERE nomeCompleto LIKE 'M%';
+
+-- EXIBIR O NOMECOMPLETO QUE TERMINE COM A
+SELECT * FROM aluno WHERE nomeCompleto LIKE '%A';
+
+SELECT * FROM aluno;
+-- EXIBIR O NOMECOMPLETO QUE CONTEM ESPAÇO
+SELECT * FROM aluno WHERE nomeCompleto LIKE '% %';
+SELECT * FROM aluno WHERE nomeCompleto LIKE 'G%EL';
+
+-- EXIBIR O NOMECOMPLETO CUJO A SEGUNDA LETRA É A
+SELECT * FROM aluno WHERE nomeCompleto LIKE '_A%';
+
+-- EXIBIR O NOMECOMPLETO CUJO A PENULTIMA LETRA É D
+SELECT * FROM aluno WHERE nomeCompleto LIKE '%D_';
+
+-- EXIBIR OS DADOS DOS ALUNOS ORDENADOS PELO NOMECOMPLETO
+SELECT * FROM aluno ORDER BY nomeCompleto;
+SELECT * FROM aluno ORDER BY nomeCompleto ASC;
+
+-- EXIBIR OS DADOS DOS ALUNOS ORDENADOS PELO NOMECOMPLETO ordem descrescente
+SELECT * FROM aluno ORDER BY nomeCompleto DESC;
+
+-- CRIAR A TABELA EMPRESA
+CREATE TABLE empresa (
+id INT PRIMARY KEY auto_increment,
+nome varchar(100),
+responsavel varchar(100)
+);
+
+INSERT INTO empresa (nome, responsavel) VALUES
+	('STEFANINI', 'PESSOA1'),
+	('C6', 'PESSOA2'),
+	('BOX DELIVERY', 'PESSOA3');
+    
+SELECT * FROM empresa;
+
+-- BONS ESTUDOS!
+
+
+
+
+
+
+
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+</head>
+<body>
+    Bairros onde já morou: <br> <input type="text" id="bairro_inp"><br>
+    Número do local morado: <br> <input type="text" id="num_inp" min="1"><br>
+
+    <button onclick="bairro()">Cadastrar bairro</button><br>
+    <button onclick="moradia()">Relembrar moradia</button>
+
+    <div id="bairro_"></div>
+</body>
+</html>
+<script>
+    var lista_bairro = []; 
+    function bairro(){
+var bairro_morado = bairro_inp.value;
+lista_bairro.push(bairro_morado);
+}
+
+function moradia(){
+        var numero_bairro = Number(num_inp.value);
+if(lista_bairro[numero_bairro - 1]== undefined){
+            bairro_.innerHTML = `Você ainda não morou num ${numero_bairro}° bairro`
+        }else{
+            bairro_.innerHTML = lista_bairro[numero_bairro - 1];
+        
+        }
+    }
+</script>

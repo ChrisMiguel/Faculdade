@@ -1,0 +1,2 @@
+&& = Seria o 'E' do código;
+|| = Seria o 'ou' do código.

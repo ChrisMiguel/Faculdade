@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicío 2</title>
+</head>
+<body>
+    <button onclick="dizer()">Diga algo sobre a disciplina de algoritmo</button>
+    <div id="msg_input"></div>
+</body>
+</html>
+<script>
+    function dizer(){
+    var texto = 'A discilpina tem muita prática';
+
+    var quantidade = 1;
+    while (quantidade <= 7){
+        msg_input.innerHTML  += `${texto}<br>`
+    quantidade += +1
+    }
+        }
+</script>

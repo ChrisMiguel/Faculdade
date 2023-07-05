@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Antiquário Velho Valioso</title>
+</head>
+
+<body>
+  <h1>Antiquário Velho Valioso</h1>
+
+  <h2>Cadastro</h2>
+  <label for="input_codigo">Código da Peça:</label>
+  <input type="number" id="input_codigo" min="1000" max="3999" />
+
+  <label for="input_valor">Valor da Peça:</label>
+  <input type="number" id="input_valor" min="100" /><br />
+
+  <button onclick="cadastrar()">Cadastrar</button>
+
+
+  <h2>Ajuste de Preço</h2>
+  <label for="input_codigoInicial">Código da Peça Inicial:</label>
+
+  <input type="number" id="input_codigoInicial" min="1000" max="3999" /><br />
+  <label for="input_codigoFinal">Código da Peça Final:</label>
+
+  <input type="number" id="input_codigoFinal" min="1000" max="3999" /><br />
+
+  <label for="input_percentual">Percentual de Reajuste:</label>
+
+  <input type="number" id="input_percentual" min="1" /><br />
+  <button onclick="ajustar()">Ajustar</button>
+
+  <h2>Lista de Peças Ajustadas</h2>
+  <div id="div_pecas_ajustadas"></div>
+
+  <h2>Resumo do Ajuste de 1000 até 1999</h2>
+  <div id="div_resumo"></div>
+
+
+</body>
+
+</html>
+<script>
+  Produto_Barato = '';
+  var lista_informacao = []
+
+  function cadastrar() {
+
+    var cod_peca = Number(input_codigo.value);
+
+    var valor_peca = Number(input_valor.value);
+
+    lista_informacao.push(cod_peca, valor_peca);
+
+    if (cod_peca < 1000 || cod_peca > 3999) {
+      alert(`O código da peça tem que estar entre 1000 e 3999!`);
+    } if (valor_peca < 100) {
+      alert('O valor da peça tem que ser maior que 100');
+    }
+  }
+
+
+  function ajustar() {
+
+    //----------------------------------------//
+    //Variáveis dos códigos das peças//
+    var cod_peca = Number(input_codigo.value);
+    var valor_peca = Number(input_valor.value);
+
+    var cod_min = Number(input_codigoInicial.value);
+    var cod_max = Number(input_codigoFinal.value);
+    //------------------------------------------//
+
+    // Etapas para o percentual de ajuste//
+    var percent_ajuste = Number(input_percentual.value); //Considere esse número em porcentagem//
+    var percent_final = Number(percent_ajuste * valor_peca / 100); // Esse número vai somar com o valor inicial//
+    var valor_final = Number(percent_final + valor_peca); // Aqui é o valor ajustado//
+    //---------------------------------------//
+
+    var totalRegistrosAjustados = 0
+    var valorTotalPecasAjustadas = 0
+
+    //-----------------------------------------//
+    //Dando push para pegar as informações do ajuste//
+    // lista_informacao2.push(cod_min, cod_max);
+    //----------------------------------------//
+
+
+
+
+
+
+    // var num_original = Number(cod_final / cod_min);
+
+    if (cod_min < 1000 || cod_max > 3999) {
+      alert(`O código da peça tem que estar entre 1000 e 3999!`);
+
+    }
+    // Etapa 1) Subtraia o número original do novo número. ➢ Etapa 2) Divida este número pelo número original. 
+    // ➢ Etapa 3) Multiplique essa resposta por 100 para converter em uma porcentagem.
+
+    if (percent_ajuste < 1) {
+      alert('Entre com o percentual de reajuste')
+    } if (cod_peca == '') {
+      alert('O ajuste é realizado somente após o cadastramento das peças') // Aqui precisa ser feito a validação do cadastro das peças//
+    }
+
+
+    //Ajuste de preço//
+    if (lista_informacao.length - 1) {
+      div_pecas_ajustadas.innerHTML += `Código da peça = ${cod_peca} - Valor Anterior: ${valor_peca} Valor ajustado = ${valor_final} <br>`
+    }
+    // if (cod_peca >= cod_min && cod_peca <= cod_max) {
+    //   totalRegistrosAjustados++
+    //   valorTotalPecasAjustadas += valorAjustado
+    // }
+
+
+
+
+    //     d) (Desafio valendo 2 pontos) Abaixo da lista acima emitir o seguinte resumo do ajuste:
+
+    // RESUMO DO AJUSTE das Peças de 9999 até 9999 
+    // Total de registros ajustados: 999 
+    // Valor total das peças com preço ajustado: 999999,99 
+    // Valor médio das peças com preço ajustado: 99999,99 
+    // Menor valor após o ajuste: 99999,99 
+
+
+    // Desafio://
+
+    // var preco = Number(inp_preco.value);
+    // div_resumo.innerHTML = `Você tem ${lista_informacao2.length} produtos cadastrados em estoque <br> 
+    // O produto mais barato é ${Produto_Barato} <br>
+
+    // A soma dos preços de compra dos produtos é ${soma} <br> 
+
+    // A média de preço de venda dos produtos é ${soma / lista2.length} <br>`
+    var AjusteDesafio = `RESUMO DO AJUSTE das Peças de ${cod_min} até 
+${cod_max} <br>
+      Total de registros ajustados:  
+${totalRegistrosAjustados} 
+      <br> 
+      Valor total das peças com preço ajustado: 
+      ${valorTotalPecasAjustadas} 
+      <br> 
+      Valor médio das peças com preço ajustado: 
+      ${valorTotalPecasAjustadas / totalRegistrosAjustados} 
+      <br>
+      O menor valor após o ajuste: ${Produto_Barato} <br>`
+    div_resumo.innerHTML = `${AjusteDesafio}`
+
+  }
+</script>

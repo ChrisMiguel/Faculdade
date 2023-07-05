@@ -1,0 +1,91 @@
+O QUE É GOVERNANÇA DE TI
+
+Governança: Garantir que políticas e estratégia sejam realmente
+implementadas e que os processos requeridos estejam sendo
+corretamente seguidos. Governança inclui definir papéis e
+responsabilidades, medir e relatar, e tomar as ações para resolver
+quaisquer questões identificadas. (ITIL Glossary of Terms, 2011).
+
+
+Governança de TI: 
+A especificação dos direitos
+decisórios e do framework de
+responsabilidades para
+estimular comportamentos
+desejáveis na utilização da TI.
+
+
+POR QUE UMA EMPRESA PRECISA DE
+GOVERNANÇA DE TI?
+• Falhas em TI podem causar impactos e colocar em risco a credibilidade da
+empresa com os consumidores e investidores;
+• Um acidente ou erro em TI pode afetar a segurança da informação e
+confidencialidade de processos;
+• Diferentes projetos de TI sem um alinhamento estratégico e procedimentos para
+seguir podem trazer prejuízos financeiros para um negócio.
+
+
+A Governança de TI entra em campo para solucionar
+problemas de alinhamento organizacional em
+relação a TI e às estratégias do negócio.
+
+Os principais INDICADORES de uma Governança de TI bem
+sucedida são:
+•Alinhamento Estratégico
+•Entrega de valor
+•Gestão de risco
+•Gestão de recursos
+•Mensuração de desempenho;
+
+
+ITIL – 5 Principais livros da Biblioteca
+A Biblioteca sugere que as atividades de
+gerenciamento de serviços sejam estruturados
+com base no ciclo de vida do serviço, que são:
+• Estratégia de Serviço;
+• Desenho de Serviço;
+• Transição de Serviço;
+• Operação de Serviço;
+• Melhoria Contínua de Serviço;
+
+
+ITIL
+O ITIL serve para organizar processos
+de TI e orientar profissionais a
+exercerem suas funções com
+eficiência. Information Technology
+Infrastructure Library, (ITIL)
+significa Biblioteca de Infraestrutura
+de Tecnologia da Informação.
+
+ACORDO DE NÍVEIS DE SERVIÇO - (ANS)
+ANS ou Service Level Agreement - SLA: É
+muito mais do que um documento
+descrevendo prazos de atendimento e
+resolução de chamados. Trata-se de um
+acordo que deve deixar claro todas as
+garantias que o provedor de serviço oferece
+em relação aos serviços que foram
+contratados, e a forma como estes níveis
+de serviço serão medidos, reportados e
+melhorados continuamente.
+
+
+Gerenciamento de Mudanças (GMUD)
+Controle do ciclo de vida de todas as mudanças, possibilitando que
+mudanças benéficas sejam feitas com o mínimo de interrupção aos
+serviços de TI.
+
+Tipos de mudanças de TI
+§ Mudança normal: são as que devem passar pelo processo de avaliação e aprovação de
+mudança antes de serem implementadas. Esta análise e aprovação e feita por um Comitê de
+Mudanças.
+§ Mudanças emergenciais: mudanças altamente críticas que precisam ser implementadas o mais
+rápido possível, para resolver um incidente grave ou falhas de segurança. Ocorrem quando há
+um erro ou ameaça inesperada, como uma falha na infraestrutura relacionada aos serviços. Uma
+ameaça à segurança é outro exemplo de uma situação de emergência que requer mudanças
+precisas e imediatas. A análise e aprovação é feita por um Comitê de Mudanças Emergenciais.
+§ Mudanças padrão: são mudanças pré-aprovadas de baixo risco onde o processo de
+implementação é conhecido. Essas mudanças estão sujeitas a políticas e procedimentos já
+estabelecidos; elas são fáceis de priorizar e implementar e, muitas vezes, não requerem
+aprovação do gerenciamento.

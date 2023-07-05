@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HeyJude</title>
+</head>
+<body>
+    Quantidade de takes: <br><input type="number" id="qtd_takes"><br>
+    Quantidade mínima de vezes que o Padrão 2 aparece: <br><input type="number" id="qtd_padrao"><br>
+<button onclick="inp_simular()">Simular</button>
+<div id="inp_imagem"></div>
+
+</body>
+</html> 
+
+<script>
+function inp_simular(){
+    contador = 1;
+    var takes = Number(qtd_takes.value);
+    var mínima = Number(qtd_padrao.value);
+
+    for(contador = 1; contador >= takes; contador++){
+inp_imagem.innerHTML = `
+Letra da música:<br> Hey, Jude, don't make it bad
+Take a sad song and make it better
+Remember to let her into your heart
+Then you can start to make it better
+Hey, Jude, don't be afraid
+You were made to go out and get her
+The minute you let her under your skin
+Then you begin to make it better
+And anytime you feel the pain, Hey, Jude, refrain
+Don't carry the world upon your shoulders
+For well you know that it's a fool
+Who plays it cool
+By making his world a little colder
+Nah,nah,nah,nah,nah,nah,nah,nah,nah, Hey, Jude, don't let me down
+You have found her, now go and get her
+Remember to let her into your heart
+Then you can start to make it better
+So let it out and let it in, Hey, Jude, begin
+You're waiting for someone to perform with
+And don't you know that it's just you, Hey, Jude, you'll do
+The movement you need is on your shoulder
+Nah,nah,nah,nah,nah,nah,nah,nah,nah, Hey, Jude, don't make it bad
+Take a sad song and make it better
+Remember to let her under your skin
+Then you'll begin to make it better, better, better, better, better... oh!
+Nah,nah,nah,nah,nah,nah,nah,nah,nah, Hey, Jude
+`
+ 
+
+}
+}
+
+</script>

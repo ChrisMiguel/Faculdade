@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual sua meta de economia? <input type="number" id="inp_economia">R$ <br/>
+    Quanto dinheiro tem guardado? <input type="number" id="inp_din">R$ <br/>
+    <button onclick="analise_economia()">
+Analisar economia 
+    </button><br/>
+<div id="divisao"></div>
+</body>
+</html>
+<script>
+    function analise_economia(){
+        var economia = Number(inp_economia.value)
+        var dinheiro = Number(inp_din.value)
+        var X = (dinheiro - economia)
+    if(dinheiro >= economia)
+    divisao.innerHTML =` 
+    Parabéns, meta alcançada! </br>
+    `
+    if(dinheiro > economia) 
+    divisao.innerHTML += `
+    Meta ultrapassada em R$${X}
+    `
+    else 
+    divisao.innerHTML = `
+    Força! Ainda em busca da meta! Falta R$${X}
+    `
+    }
+</script>

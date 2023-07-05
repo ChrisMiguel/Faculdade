@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 10</title>
+</head>
+<body>
+    Linha de ônibus: <br><input id="inp_linha"><br>
+    <button onclick="cadastro()">Gravar Buzão</button><br>
+    Pesquise aqui suas linhas:<br><input id="inp_pesquisa"><br>
+    <button onclick="pesquisa()">Pesquisar</button><br> 
+    <div id="mensagem"></div>
+</body>
+</html>
+
+<script>
+    var listaBus = []
+    function cadastro() {
+        mensagem.innerHTML = '';
+        var linhaBus = inp_linha.value;
+        listaBus.push(linhaBus);
+
+        for (var contador = listaBus.length - 1; contador >= 0; contador--) { 
+               mensagem.innerHTML += `${listaBus[contador]}<br>`
+        }
+
+    }
+var ListaLinhas = [];
+
+    function pesquisa() {
+        // var pesquisa = inp_pesquisa.value;
+    mensagem.innerHTML= '';
+
+        // mensagem.innerHTML = lista.indexOf(pesquisa); 
+         if (ListaLinhas.length > 0) {
+            for(var excluir = ListaLinhas.length - 1; excluir >= 0; excluir--){
+             ListaLinhas.pop();
+          } 
+         }
+         var linha_pesquisa = inp_pesquisa.value;
+         var linha_contador = 0;
+         
+         
+        for (var contador2 = 0; contador2 < listaBus.length; contador2++) { 
+            if (linha_pesquisa == listaBus[contador2]) {
+                linha_contador++; 
+
+                ListaLinhas.push(contador2) 
+            }
+        }
+
+        if (linha_contador == 0) {
+            mensagem.innerHTML += `
+            Você nunca pegou essa linha
+            `
+        } else {
+            if (linha_contador == 1) {
+                mensagem.innerHTML += `
+            Você já pegou essa linha ${linha_contador} vez, nessa ordem: 
+            `
+            } else {
+                
+                mensagem.innerHTML += `
+            Você já pegou essa linha ${linha_contador} vezes, nessa ordem: 
+            `
+            }
+            for (var contador_posicao = 0; contador_posicao < ListaLinhas.length; contador_posicao++) {
+                if (contador_posicao < ListaLinhas.length - 1) {
+                    mensagem.innerHTML += `
+                    ${ListaLinhas[contador_posicao] + 1},
+                `
+                } else {
+                    mensagem.innerHTML += `
+                    ${ListaLinhas[contador_posicao] + 1}
+                `
+                }
+            }
+        }
+     
+}
+</script>

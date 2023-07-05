@@ -1,0 +1,5 @@
+Vamos provavelmente usar o logsim;
+AA api será usada na prova;
+Explicar alguns dados da api;
+Dashboards, tipos de gráficos e como mexer neles;
+Vai ter perguntas sobre o nodeJS;

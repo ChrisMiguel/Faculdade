@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Valor da passsagem: <input id="valor_passagem"><br><br>
+    Quantidade de viagens: <input id="qntd_viagens"><br><br>
+    Distância até a casa: <input id="dist_casa_trab">Km<br><br>
+    <button onclick="calcular_valor()">Calcular VT</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+
+function calcular_valor(){
+        var V_passagem = Number(valor_passagem.value)
+        var Qntd_viagens_onibus = Number(qntd_viagens.value) * 0.9
+        var V_onibus = V_passagem * Qntd_viagens_onibus
+        var Qntd_viagens_uber = Number (qntd_viagens.value) * 0.1
+        var Dist_casa_trab = (Number(dist_casa_trab.value) * 0.75) * Qntd_viagens_uber
+        
+   div_resultado.innerHTML =
+   `
+   Você vai gastar R$${Dist_casa_trab + V_onibus} por mês com transporte.
+    
+    `
+
+}
+</script>

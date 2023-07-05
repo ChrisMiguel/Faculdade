@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Quantas pessoas vão entrar no carro?<br> <input id="ipt_pessoas" type="number"><br>
+    <button onclick="inp_carona()">Partiu carona</button>
+    <div id="resultado"></div>
+</body>
+
+</html>
+
+<script>
+    var contador = 1
+    function inp_carona() {
+        var passageiros = Number(ipt_pessoas.value)
+        while (contador <= passageiros) {
+            if (contador == 1) {
+                resultado.innerHTML += `Entrou o ${contador}º passageiro que é o(a) motorista <br>`
+            } else if (contador >= 6) {
+                resultado.innerHTML += `O ${contador}º passageiro terá que esperar! <br>`
+            } else {
+                resultado.innerHTML += `Entrou o ${contador}º passageiro <br>`
+            }
+            contador += 1
+        }
+    }
+</script>

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+    <html lang="pt-br">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Yocto's Machine</title>
+            <link rel="shortcut icon" href="https://pbs.twimg.com/profile_images/1462840633400467457/gtKFcsdc_400x400.jpg" type="image/x-icon">
+        </head>
+        <style>
+            /*Css desenvolvido com grande ajuda da W3 Schools*/
+            body{
+                background-color: moccasin;
+                text-align: center;
+                font-family: cursive;
+                align-items: center;
+            }
+            button{
+                cursor: pointer;
+                border-radius: 10px;
+                background-color: white;
+                border:  2px solid #72d4a2;
+                transition-duration: 0.4s;
+                padding: 15px 30px;
+                font-size: 16px;
+            }
+            .card{
+                width: 500px;
+                height: fit-content;
+                background-color: antiquewhite;
+                margin: 10px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .borda-card{
+                border: 3px solid cyan;
+            }
+            button:hover{
+                background-color: #72d4a2;
+                color: white;
+            }
+            button:active{
+                transform: translateY(12px);
+            }
+            /*Input copiada do site https://getcssscan.com/css-checkboxes-examples*/
+            .checkbox-wrapper-61 input[type="checkbox"] {
+              visibility: hidden;
+              display: none;
+            }
+            .checkbox-wrapper-61 *,
+            .checkbox-wrapper-61 ::after,
+            .checkbox-wrapper-61 ::before {
+              box-sizing: border-box;
+            }
+            .checkbox-wrapper-61 {
+              position: relative;
+              display: block;
+              overflow: hidden;
+            }
+            .checkbox-wrapper-61 .check {
+              width: 50px;
+              height: 50px;
+              position: absolute;
+              opacity: 0;
+            }
+            .checkbox-wrapper-61 .label svg {
+              vertical-align: middle;
+            }
+            .checkbox-wrapper-61 .path1 {
+              stroke-dasharray: 400;
+              stroke-dashoffset: 400;
+              transition: .5s stroke-dashoffset;
+              opacity: 0;
+            }
+            .checkbox-wrapper-61 .check:checked + label svg g path {
+              stroke-dashoffset: 0;
+              opacity: 1;
+            }
+            /*Input copiada do site https://johnywalves.com.br/input-estilizado/*/
+            .design_form_decimal{
+                overflow: hidden;
+                position: relative;
+            }
+            .design_input_decimal{
+                color: #000000;
+                font-size: 28px;
+                width: 100%;
+                padding: 20px 5px 5px;
+                background-color: antiquewhite;
+                border: none;
+                border-radius: 4px;
+            }
+            .design_label_decimal{
+                color: #000000;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                border-bottom: 1px solid #ffffff;
+            }
+            .design_span_decimal{
+                position: absolute;
+                bottom: 5px;
+                left: 5px;
+                font-size: 28px;
+                transition: all 0.3s ease;
+            }
+            .design_label_decimal::after{
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: -1px;
+                width: 100%;
+                height: 100%;
+                border-bottom: 3px solid #e0138c;
+                transform: translateX(-100%);
+                transition: all 0.3s ease;
+            }
+            .design_input_decimal:focus + .design_label_decimal .design_span_decimal,
+            .design_input_decimal:valid + .design_label_decimal .design_span_decimal {
+              transform: translateY(-150%);
+              font-size: 14px;
+              bottom: 10px;
+              color: #e0138c;
+            }
+            .design_input_decimal:focus + .design_label_decimal::after,
+            .design_input_decimal:valid + .design_label_decimal::after {
+              transform: translateX(0%);
+            }
+        </style>
+        <script>
+            
+        </script>
+        <body>
+            <div>
+                <h1>
+                    Yocto's Machine
+                </h1>
+            </div>
+            <div class="card borda-card">
+                <h3>
+                    Decimal
+                </h3>
+                <p>
+                    <form class="design_form_decimal">
+                        <input name="name" class="design_input_decimal" id="input_decimal" type="number" autocomplete="off" required />
+                        <label for="name" class="design_label_decimal">
+                          <span class="design_span_decimal">Digite o valor em decimal</span>
+                        </label>
+                      </form>
+                </p>
+            </div>
+            <div class="card borda-card">
+                <h3>
+                    Converter para:
+                </h3>
+                <p>
+                    <div class="checkbox-wrapper-61">
+                        <input type="checkbox" class="check" id="CkBin"/>
+                        <label for="CkBin" class="label">
+                          <svg width="45" height="45" viewbox="0 0 95 95">
+                            <rect x="30" y="20" width="50" height="50" stroke="black" fill="none" />
+                            <g transform="translate(0,-952.36222)">
+                              <path d="m 56,963 c -102,122 6,9 7,9 17,-5 -66,69 -38,52 122,-77 -7,14 18,4 29,-11 45,-43 23,-4 " stroke="black" stroke-width="3" fill="none" class="path1" />
+                            </g>
+                          </svg>
+                          <span>Binário</span>
+                        </label>
+                      </div>
+                </p>
+                <p>
+                    <div class="checkbox-wrapper-61">
+                        <input type="checkbox" class="check" id="CkOct"/>
+                        <label for="CkOct" class="label">
+                          <svg width="45" height="45" viewbox="0 0 95 95">
+                            <rect x="30" y="20" width="50" height="50" stroke="black" fill="none" />
+                            <g transform="translate(0,-952.36222)">
+                              <path d="m 56,963 c -102,122 6,9 7,9 17,-5 -66,69 -38,52 122,-77 -7,14 18,4 29,-11 45,-43 23,-4 " stroke="black" stroke-width="3" fill="none" class="path1" />
+                            </g>
+                          </svg>
+                          <span>Octal</span>
+                        </label>
+                      </div>
+                </p>
+                <p>
+                    <div class="checkbox-wrapper-61">
+                        <input type="checkbox" class="check" id="CkHex"/>
+                        <label for="CkHex" class="label">
+                          <svg width="45" height="45" viewbox="0 0 95 95">
+                            <rect x="30" y="20" width="50" height="50" stroke="black" fill="none" />
+                            <g transform="translate(0,-952.36222)">
+                              <path d="m 56,963 c -102,122 6,9 7,9 17,-5 -66,69 -38,52 122,-77 -7,14 18,4 29,-11 45,-43 23,-4 " stroke="black" stroke-width="3" fill="none" class="path1" />
+                            </g>
+                          </svg>
+                          <span>Hexadecimal</span>
+                        </label>
+                      </div>
+                </p>
+                <p>
+                    <button onclick="converter()">
+                        Converter
+                    </button>
+                </p>
+            </div>
+            <div class="card borda-card">
+                <table style="width:100%">
+                    <tr>
+                      <th>Binário</th>
+                      <th>Octal</th>
+                      <th>Hexadecimal</th>
+                    </tr>
+                    <tr>
+                      <td><a id="mensagem_binario"></a></td>
+                      <td><a id="mensagem_octal"></a></td>
+                      <td><a id="mensagem_hexadecimal"></a></td>
+                    </tr>
+                  </table>
+            </div>
+            <div class="card borda-card">
+                <h3>
+                    Exercícios:
+                </h3>
+                <p>
+                    <table style="width:100%">
+                        <tr>
+                            <th>
+                                Tipo e Dificuldade
+                            </th>
+                            <th>
+                                <div class="checkbox-wrapper-61">
+                                    <input type="radio" class="check" id="ExFacil" name="Exercices"/>
+                                    <label for="ExFacil" class="label">
+                                      <svg width="45" height="45" viewbox="0 0 95 95">
+                                        <rect x="30" y="20" width="50" height="50" stroke="black" fill="none" />
+                                        <g transform="translate(0,-952.36222)">
+                                          <path d="m 56,963 c -102,122 6,9 7,9 17,-5 -66,69 -38,52 122,-77 -7,14 18,4 29,-11 45,-43 23,-4 " stroke="black" stroke-width="3" fill="none" class="path1" />
+                                        </g>
+                                      </svg>
+                                      <span>Fácil</span>
+                                    </label>
+                                  </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div class="checkbox-wrapper-61">
+                                    <input type="radio" class="check" id="ExBinario" name="Exercices2"/>
+                                    <label for="ExFacil" class="label">
+                                      <svg width="45" height="45" viewbox="0 0 95 95">
+                                        <rect x="30" y="20" width="50" height="50" stroke="black" fill="none" />
+                                        <g transform="translate(0,-952.36222)">
+                                          <path d="m 56,963 c -102,122 6,9 7,9 17,-5 -66,69 -38,52 122,-77 -7,14 18,4 29,-11 45,-43 23,-4 " stroke="black" stroke-width="3" fill="none" class="path1" />
+                                        </g>
+                                      </svg>
+                                      <span>Binário</span>
+                                    </label>
+                                  </div>
+                            </th>
+                            <th>
+                                <div class="checkbox-wrapper-61">
+                                    <input type="radio" class="check" id="ExMedio" name="Exercices"/>
+                                    <label for="ExMedio" class="label">
+                                      <svg width="45" height="45" viewbox="0 0 95 95">
+                                        <rect x="30" y="20" width="50" height="50" stroke="black" fill="none" />
+                                        <g transform="translate(0,-952.36222)">
+                                          <path d="m 56,963 c -102,122 6,9 7,9 17,-5 -66,69 -38,52 122,-77 -7,14 18,4 29,-11 45,-43 23,-4 " stroke="black" stroke-width="3" fill="none" class="path1" />
+                                        </g>
+                                      </svg>
+                                      <span>Médio</span>
+                                    </label>
+                                  </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div class="checkbox-wrapper-61">
+                                    <input type="radio" class="check" id="ExOctal" name="Exercices2"/>
+                                    <label for="ExFacil" class="label">
+                                      <svg width="45" height="45" viewbox="0 0 95 95">
+                                        <rect x="30" y="20" width="50" height="50" stroke="black" fill="none" />
+                                        <g transform="translate(0,-952.36222)">
+                                          <path d="m 56,963 c -102,122 6,9 7,9 17,-5 -66,69 -38,52 122,-77 -7,14 18,4 29,-11 45,-43 23,-4 " stroke="black" stroke-width="3" fill="none" class="path1" />
+                                        </g>
+                                      </svg>
+                                      <span>Octal</span>
+                                    </label>
+                                  </div>
+                            </th>
+                            <th>
+                                <div class="checkbox-wrapper-61">
+                                    <input type="radio" class="check" id="ExDificil" name="Exercices"/>
+                                    <label for="ExDificil" class="label">
+                                      <svg width="45" height="45" viewbox="0 0 95 95">
+                                        <rect x="30" y="20" width="50" height="50" stroke="black" fill="none" />
+                                        <g transform="translate(0,-952.36222)">
+                                          <path d="m 56,963 c -102,122 6,9 7,9 17,-5 -66,69 -38,52 122,-77 -7,14 18,4 29,-11 45,-43 23,-4 " stroke="black" stroke-width="3" fill="none" class="path1" />
+                                        </g>
+                                      </svg>
+                                      <span>Difícil</span>
+                                    </label>
+                                  </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div class="checkbox-wrapper-61">
+                                    <input type="radio" class="check" id="ExHexadecimal" name="Exercices2"/>
+                                    <label for="ExFacil" class="label">
+                                      <svg width="45" height="45" viewbox="0 0 95 95">
+                                        <rect x="30" y="20" width="50" height="50" stroke="black" fill="none" />
+                                        <g transform="translate(0,-952.36222)">
+                                          <path d="m 56,963 c -102,122 6,9 7,9 17,-5 -66,69 -38,52 122,-77 -7,14 18,4 29,-11 45,-43 23,-4 " stroke="black" stroke-width="3" fill="none" class="path1" />
+                                        </g>
+                                      </svg>
+                                      <span>Hexadecimal</span>
+                                    </label>
+                                  </div>
+                            </th>
+                            <th>
+                                <div class="checkbox-wrapper-61">
+                                    <input type="radio" class="check" id="ExInsano" name="Exercices"/>
+                                    <label for="ExInsano" class="label">
+                                      <svg width="45" height="45" viewbox="0 0 95 95">
+                                        <rect x="30" y="20" width="50" height="50" stroke="black" fill="none" />
+                                        <g transform="translate(0,-952.36222)">
+                                          <path d="m 56,963 c -102,122 6,9 7,9 17,-5 -66,69 -38,52 122,-77 -7,14 18,4 29,-11 45,-43 23,-4 " stroke="black" stroke-width="3" fill="none" class="path1" />
+                                        </g>
+                                      </svg>
+                                      <span>Insano</span>
+                                    </label>
+                                  </div>
+                            </th>
+                        </tr>
+                    </table>
+                </p>
+                <button onclick="getRandomInt()">
+                    Começar
+                </button>
+                <p id="mensagem_exercicio"></p>
+                <p>
+                    <form class="design_form_decimal">
+                        <input name="name1" class="design_input_decimal" id="input_exercicio" type="text" autocomplete="off" required />
+                        <label for="name1" class="design_label_decimal">
+                          <span class="design_span_decimal">Digite a Resposta</span>
+                        </label>
+                      </form>
+                </p>
+                <button onclick="Calcular()">
+                    Ver Resposta
+                </button>
+                <p id="mensagem_resposta"></p>
+            </div>
+            <div class="card borda-card">
+                <p>
+                    Desenvolvido por Alexandre Damas Murata<br>
+                    Email: alexandre.murata@sptech.school<br>
+                    Base fornecida pela professora Marise
+                </p>
+                <p>
+                    Aluno da turma de Sis 2023 da Sptech<br>
+                    <img src="https://www.sptech.school/assets/images/logos/sptech_logo_negativa.png" width="fit-content" height="250px" alt="Logo da Sptech">
+                </p>
+            </div>
+        </body>
+    </html>
+    <script>
+        function converter() {
+            var decimal = Number (input_decimal.value)
+            let binario = decimal.toString(2)
+            let octal = decimal.toString(8)
+            let hexadecimal = decimal.toString(16).toUpperCase()
+            var verifica_binario = document.getElementById('CkBin')
+            var verifica_octal = document.getElementById('CkOct')
+            var verifica_hexadecimal = document.getElementById('CkHex')
+
+            document.getElementById("mensagem_binario").innerHTML = ""
+            document.getElementById("mensagem_octal").innerHTML = ""
+            document.getElementById("mensagem_hexadecimal").innerHTML = ""
+            if (verifica_binario.checked == true) {
+                document.getElementById("mensagem_binario").innerHTML = `${binario}`
+            }
+            if (verifica_octal.checked == true) {
+                document.getElementById("mensagem_octal").innerHTML = `${octal}`
+            }
+            if (verifica_hexadecimal.checked == true) {
+                document.getElementById("mensagem_hexadecimal").innerHTML = `${hexadecimal}`
+            }
+        }
+        function getRandomInt(min, max) {
+        min = Math.ceil(0);
+        max = Math.floor(1);
+        var ExEasy = document.getElementById('ExFacil')
+        var ExMedium = document.getElementById('ExMedio')
+        var ExDificult = document.getElementById('ExDificil')
+        var ExInsane = document.getElementById('ExInsano')
+            if (ExEasy.checked == true) {
+                random = Math.floor(Math.random() * 16)
+            } else if (ExMedium.checked == true) {
+                random = Math.floor(Math.random() * 256)
+            } else if (ExDificult.checked == true) {
+                random = Math.floor(Math.random() * 4096)
+            } else if (ExInsane.checked == true) {
+                random = Math.floor(Math.random() * 65536)
+            }
+        document.getElementById('mensagem_exercicio').innerHTML = random
+        mensagem_exercicio.value = random
+        }
+        function Calcular() {
+            var verifica_Resposta = input_exercicio.value
+            var verifica_Ex = Number(mensagem_exercicio.value)
+            var ExBin = document.getElementById('ExBinario')
+            var ExOct = document.getElementById('ExOctal')
+            var ExHex = document.getElementById('ExHexadecimal')
+            if (ExBin.checked == true) {
+                verifica_Ex = verifica_Ex.toString(2)
+            } else if (ExOct.checked == true) {
+                verifica_Ex = verifica_Ex.toString(8)
+            } else if (ExHex.checked == true) {
+                verifica_Ex = verifica_Ex.toString(16).toUpperCase()
+            }
+            if (verifica_Ex == verifica_Resposta) {
+                document.getElementById('mensagem_resposta').innerHTML = `<marquee>Parabéns você acertou!</marquee>`
+            } else {
+                document.getElementById('mensagem_resposta').innerHTML = `<marquee>Que pena você errou!</marquee>`
+            }
+        }
+    </script>

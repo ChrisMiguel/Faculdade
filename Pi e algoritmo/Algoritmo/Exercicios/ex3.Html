@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 3 </title>
+</head>
+<body>
+    Um número <input id="Tabuada" type="number">
+    <button onclick="ver_tabuada()">Ver tabuada</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    function ver_tabuada (){
+        var numero = Tabuada.value
+        div_resultado.innerHTML = 
+        `
+        ${numero * 1}<br>
+        ${numero * 2}<br>
+        ${numero * 3}<br>
+        ${numero * 4}<br>
+        ${numero * 5}<br>
+        ${numero * 6}<br>
+        ${numero * 7}<br>
+        ${numero * 8}<br>
+        ${numero * 9}
+        `
+    }
+
+</script>

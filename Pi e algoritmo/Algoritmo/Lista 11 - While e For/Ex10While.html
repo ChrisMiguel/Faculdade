@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 10</title>
+</head>
+<body>
+   Mínimo: <input type="number" id="numerosmin" min="0"><br>
+    Máximo 2: <input type="number" id="numerosmax" max="50">
+<button onclick="pares()">S2 pares </button>
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+function pares(){
+    var min = Number(numerosmin.value)
+    var max = Number(numerosmax.value)
+
+    while(min <= max){
+    if(min %2 == 0){
+        mensagem.innerHTML += `${min}<br>`
+    }
+min += 1   
+}
+
+} 
+</script>

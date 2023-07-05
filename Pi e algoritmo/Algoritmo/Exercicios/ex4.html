@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+Sabor da pizza: <input id="Sabor_pizza" type="text"><br>
+Valor da pizza: <input id="Valor_pizza" type="number"><br>
+Quantos amigos vão comer? <input id="qtd_amigos" type="number"><br>
+<button onclick="valor_amigo()">Ver valor por amigo</button>
+<div id="div_resultado"></div>
+</body>
+</html>
+<script>
+function valor_amigo(){
+var amigo = qtd_amigos.value 
+var pizza = Valor_pizza.value
+var sabor = Sabor_pizza.value
+
+div_resultado.innerHTML= 
+`
+Cada amigo vai colaborar com R$${pizza/amigo} para a pizza de ${sabor}   
+`
+}
+</script>

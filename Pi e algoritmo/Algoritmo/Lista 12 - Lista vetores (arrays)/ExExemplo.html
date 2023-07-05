@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo</title>
+</head>
+<body>
+    Pessoas: <br><input type="text" id="inp_fruta"><br>
+    <button onclick="pesquisa()">Exibir</button>
+<div id="mensagem"></div>    
+</body>
+</html>
+<script>
+    // Representa um vetor [];
+    // Aceita qualquer tipo de informação, seja número, seja palavras;
+    // var lista_frutas = [1, 2, 3, 4]; 
+    // .indexOf vai sempre trazer um número e poder criar uma lógica; IndexOf = Índice;
+    var lista_frutas = ['Henry', 
+    'Petry', 
+    'Brandão', 
+    'Tiago',
+    'Lívia',
+    'Marcela']; 
+
+    function pesquisa(){
+mensagem.innerHTML = ` Frutas na lista: ${lista_frutas.length}<br>
+1.${lista_frutas [0]}<br>
+2.${lista_frutas [1]}<br>
+3.${lista_frutas [2]}<br>
+`
+for(var i = 0; i < lista_frutas.length; i++){
+    mensagem.innerHTML += `
+1.${lista_frutas [0]}<br>
+`   
+} 
+    }
+</script>

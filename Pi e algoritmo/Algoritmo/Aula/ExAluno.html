@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+Sua nota: <input type="number" id="nota1"><br/>
+<button onclick="class()">
+Classificar aluno
+</button>
+<div id="divisao"></div>
+</body>
+</html>
+<script>
+    function class(){
+        var nota = Number(nota1.value)
+        if(nota <= 5){
+            divisao.innerHTML = `
+            Aluno precisa de muita ajuda
+            `
+        }else if(nota <= 7){
+divisao.innerHTML = `
+Aluno na média
+`
+
+        }
+    }
+</script>

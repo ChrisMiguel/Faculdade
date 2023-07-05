@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números crescentes</title>
+</head>
+
+<body>
+    <button style="width: 1350px;" onclick="crescentes()">Números crescentes</button>
+    <div id="numero"></div>
+</body>
+
+</html>
+<script>
+
+    var lista_numeros = [19, 5, 37, 2, 1];
+
+    function crescentes() {
+        for (var c = 0; c < lista_numeros.length; c++) {
+            for (var k = 0; k < lista_numeros.length; k++) {
+                if (lista_numeros[k] > lista_numeros[c]) {
+
+                    var auxiliar = lista_numeros[k];
+                    lista_numeros[k] = lista_numeros[c];
+                    lista_numeros[c] = auxiliar;
+                    numero.innerHTML = lista_numeros
+                }
+            }
+
+        }
+
+    }
+
+</script>

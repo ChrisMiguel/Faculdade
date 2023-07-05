@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Nota 1<input id="input_n1" /><br />
+    Nota 2<input id="input_n2" /><br />
+    Nota 3<input id="input_n3" /><br />
+    <button onclick="analisar_desempenho()">Analisar desempenho</button>
+    <p id="p_resultado_desempenho"></p>
+  </body>
+</html>
+<script>
+  function analisar_desempenho() {
+    var nota1 = Number(input_n1.value);
+    var nota2 = Number(input_n2.value);
+    var nota3 = Number(input_n3.value);
+
+    var media = (nota1 + nota2 + nota3) / 3;
+
+    p_resultado_desempenho.innerHTML = `
+            Sua média foi de ${media} <br>
+        `;
+
+    if (media > 9.4) {
+      if (media == 10) {
+        p_resultado_desempenho.innerHTML += `
+                Nota PERFEITA ! <br>
+            `;
+      }
+      if (media < 10) {
+        p_resultado_desempenho.innerHTML += `
+                    Parabéns, você é fora de série! <br>
+                `;
+      }
+    }
+  }
+</script>

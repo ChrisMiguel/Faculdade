@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova de algoritmo</title>
+</head>
+<body>
+    
+    
+    Quantidade de pontos de energia que Naruto tem:<input type="number" id="inp_energia" min="20" max="5000"><br>
+Quantidade de clones desejado:<input type="number" id="inp_clone" min="0" max="250"><br>
+Quantidade de clones por linha:<input type="number" id="inp_linha" min="1"><br>
+<button onclick="criar_clones()" img id="img_naruto" style="width: 100px;" src="naruto.png" alt="">Criar clones</button><br>
+<div id="div_naruto"></div>
+
+</body>
+</html>
+<script>
+
+function criar_clones(){
+  
+var energia = Number(inp_energia.value);    
+var clones = Number(inp_clone.value);
+var linha = Number(inp_linha.value);
+var input_clone = clones * 20;
+var imagem = img_naruto.value; 
+var imagem_naru = imagem * clones;
+var sobra_energia1 = Number(energia - input_clone)
+var sobra1 = Number(sobra_energia1/energia * 100)
+
+if(energia < 20 || energia > 5000 || clones > 250 || linha < 0 ){
+    alert("ERRO NA ENTRADA DE DADOS – Energia tem que ser entre 20 e 5.000. Quantidade de Clones tem que ser entre 0 e 250. Quantidade de Clones por linha tem que ser maior que 0”.")
+}
+if(energia >= input_clone) {
+div_naruto.innerHTML = `
+${imagem_naru * clones}<br>
+Energia inicial: ${energia}<br>
+Quantidade de clones: ${clones}<br>
+Sobra de energia: ${sobra_energia1}
+`
+}else{
+    alert('A energia para cada clone é 20 pontos, coloque uma quantidade de energia suficiente para clonar o naruto desejado')}
+if(sobra_energia1 > 1000 || clones > 50 && sobra1 == 20 ){
+div_naruto.innerHTML = `
+PROVAVELMENTE VOCE VAI GANHAR
+`
+}if(sobra_energia1 > 500 || clones < 20 || clones > 50 && sobra1 == 10 ){
+div_naruto.innerHTML = `
+A LUTA VAI SER MUITO BOA
+`
+
+}else{
+div_naruto.innerHTML = `
+TORÇA PARA O ADVERSÁRIO SER FRAQUINHO
+`
+}
+}
+</script>

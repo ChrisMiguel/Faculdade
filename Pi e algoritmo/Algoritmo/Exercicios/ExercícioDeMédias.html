@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+N1: <input id="input_N1" type="number"><br>
+N2: <input id="input_N2" type="number"><br>
+N3: <input id="input_N3" type="number"><br>
+<button onclick="ver_média_ponderada()"> Ver média ponderada das continuadas </button>
+</body>
+</html>
+<script>
+    
+function ver_média_ponderada() {
+    alert(
+    (Number(input_N1.value* 2) + 
+    Number(input_N2.value)* 4 + 
+    Number(input_N3.value) * 4 ) 
+    / (2 + 4 + 4) 
+  );
+}
+  
+  </script>

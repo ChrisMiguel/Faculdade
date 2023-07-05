@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tio Patinhas</title>
+</head>
+<body>
+    <div id="divisao" style="color: rgb(255, 0, 191);">
+    <h1>Total guardado no cofrinho: R$ 0 <br> 
+    Depósitos efetuados: R$ 0 <br>
+    Retiradas efetuadas: R$ 0 </h1><br>
+   </div>
+   <button onclick="depositar50()">Depositar 0.50 </button>
+<button onclick="depositar2()"> Depositar 2.00</button>
+<button onclick="retirar50()">Retirar 0.50</button><br>
+Quantidade: <input type="Number" id='quantidade'>
+<button onclick="retirar()">Retirar</button>
+</body>
+</html>
+<script>
+    var total = 0;
+    var depositos = 0;
+    var retiradas = 0;
+   
+    function depositar50(){
+total += 0.5
+depositos += 1
+atualizar_texto()
+}
+
+function depositar2(){
+    total += 2
+    depositos
+}
+function retirar(){
+    var quantidade1 = Number(quantidade.value)
+    total -= quantidade1
+    retiradas += 1
+    atualizar_texto() 
+}
+
+
+function atualizar_texto(){
+    divisao.innerHTML = `
+    Total guardado no cofrinho: R$${total}
+Depósitos efetuados: ${depositos}
+Retiradas efetuadas: ${retiradas}
+    `
+} 
+</script>

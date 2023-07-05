@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 14</title>
+</head>
+
+<body>
+    Nome do produto: <br> <input id="ipt_produto"><br>
+    Preço de compra: <br> <input id="ipt_valor"><br>
+    <button onclick="analise()">Cadastrar</button><br>
+    <button onclick="relato()">Ver relatório</button>
+    <div id="resultado"></div>
+</body>
+
+</html>
+
+<script>
+    var lista = []
+    var lista2 = []
+    var lista3 = []
+    function analise() {
+        var produto = ipt_produto.value;
+        var valor = Number(ipt_valor.value);
+        var venda = valor * 1.25;
+
+        lista.push(produto);
+        lista2.push(valor);
+        lista3.push(venda);
+    }
+    function relato() {
+
+        resultado.innerHTML += `Total de produtos: ${lista.length} <br> <br>`
+
+        for (var contador = 0; contador < lista.length; contador++) {
+
+            resultado.innerHTML += `Produto ${contador + 1}: ${lista[contador]} <br>
+Preço de compra: R$${lista2[contador]}. Vender por R$${lista3[contador]} <br> <br> `
+        }
+    }
+</script>

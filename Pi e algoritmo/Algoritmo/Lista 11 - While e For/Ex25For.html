@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 25</title>
+</head>
+
+<body>
+    Número desejado <br>
+    <input type="Number" id="inp_numeros" min="0" max="100">
+    <br>
+    <button onclick="ver_divisor()">Ver divisores</button><br>
+    <div id="inp_texto"></div>
+</body>
+
+</html>
+<script>
+    function ver_divisor() {
+        var numero = Number(inp_numeros.value);
+        var primo = true;
+        if (numero > 100 || numero < 0) {
+            alert('Coloque números entre 0 e 100')
+        } else {
+            for (var contador = 1; contador <= numero; contador++) {
+                if (numero % contador == 0) {
+                    inp_texto.innerHTML += `
+${contador}<br>
+`
+                    if (contador != 1 && contador != numero) {
+                        primo = false;
+                    }
+                }
+            } if (primo == true) {
+                inp_texto.innerHTML += `
+    Número ${numero} é um número primo  
+    `
+            }
+        }
+    }
+</script>

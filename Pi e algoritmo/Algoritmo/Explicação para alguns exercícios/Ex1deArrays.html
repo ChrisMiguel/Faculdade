@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1</title>
+</head>
+<body>
+   Nome da fruta requerida: <br> <input type="text" id="frutas_inp">
+   <button onclick="Pesquisar_fruta()">Pesquisar</button>
+<div id="visao_frutas"></div>
+</body>
+</html>
+
+<script>
+function Pesquisar_fruta(){
+    var resposta = frutas_inp.value;
+    var lista_fruta = ['kiwi', 'maçã', 'banana', 'pêra', 'pêssego', 'abacaxi', 'morango', 'uva']; //Foi criada uma lista com nomes prontos para verificar se já existem na input do usuário.//
+if(lista_fruta.indexOf(resposta) > -1){ //IndexOf foi usado para sempre retornar o primeio nome na lista, porém o (-1) faz com que seja lida toda a lista//
+    visao_frutas.innerHTML= `A fruta ${resposta} existe na lista.`
+}else{
+    visao_frutas.innerHTML = `Não existe a fruta ${resposta} na lista`
+}
+
+}
+</script>

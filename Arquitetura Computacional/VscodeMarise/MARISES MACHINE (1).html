@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)file:///C:/Users/Marise%20Miranda/Downloads/Marises%20Machine.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+body{
+background-image: url(https://cdn.theatlantic.com/thumbor/AkgepovHpRbITRHKd75HXWqJzUA=/0x0:2000x1125/1600x900/media/img/mt/2019/10/Matrix/original.gif);
+background-position: 10% 22%;
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+
+</style>
+</head>
+
+<body bgcolor="#00ffff">
+    
+    <left>
+        <h1 style="color: #00ff0da6;">Máquina binária do Chrisinho</h1>
+
+<h2 style="color: #00ff0da6;">Número decimal:</h2>
+        <input id="demo1" type="text" placeholder="Digite o valor em decimal">
+
+<br>
+
+        <h1 style="color: #00ff0da6;">Converter para:</h1>
+
+
+        <input color="blue" onclick="aparecer_octal()" type="checkbox"><b style="color: #00ff0da6;">Número octal</b>
+<br>
+        <div style="display: none; background-color: #ffffff; border-radius: 5px; padding: 5px; color: rgb(0, 0, 0); width: 5%; height: 10px; font-weight: 300;" id="demo2"></div>
+
+<br>
+
+        <input onclick="aparecer_hexa()" type="checkbox"><b style="color: #00ff0da6;">Número hexadecimal</b>
+<br>
+        <div style="display: none; background-color: #ffffff;text-transform: uppercase ; border-radius: 5px; padding: 5px; color: rgb(0, 0, 0); width: 5%; height: 10px; font-weight: 300;" id="demo3"></div>
+        
+<br>
+
+        <input onclick="aparecer_bin()" type="checkbox"><b style="color: #00ff0da6;">Número binário</b>
+<br>
+        <div style="display: none; background-color: #ffffff; border-radius: 3px; padding: 5px; color: rgb(0, 0, 0); width: 10%; height: 10px; font-weight: 300;" id="demo4"></div>
+
+<br>
+
+<button onclick="converter()" style="color: black; background-color: rgb(0, 255, 64);">Converter</button>
+    </center>
+
+
+<br><audio controls autoplay loop src="..//VscodeMarise/X2Download.app - 3 Minute Timer Lofi (128 kbps).mp3"></audio><br>
+
+<script>
+
+function converter() {
+    
+    var decimal = Number (demo1.value);
+
+let octal = decimal.toString(8);
+
+let hexadecimal = decimal.toString(16);
+
+let binaria = decimal.toString(2);
+
+console.log (decimal);
+console.log (octal);
+console.log (hexadecimal);
+console.log (binaria);
+
+document.getElementById("demo1").innerHTML = ` ${decimal}`;
+document.getElementById("demo2").innerHTML = ` ${octal}`;
+document.getElementById("demo3").innerHTML = ` ${hexadecimal}`;
+document.getElementById("demo4").innerHTML = ` ${binaria}`;
+
+
+}
+
+function aparecer_bin() {
+    demo4.style.display = 'block'
+}
+
+function aparecer_hexa() {
+    demo3.style.display = 'block'
+}
+
+function aparecer_octal() {
+    demo2.style.display = 'block'
+}
+document.bgColor= 'blac';
+</script></body></html>

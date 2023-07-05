@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+</head>
+<body>
+    Seu filme favorito: <br><input type="text" id="inp_filme"><br>
+    <button onclick="cadastrar_filme()">Cadastrar filme</button><br>
+    <button onclick="filme_favorito()">Ver favoritos</button><br>
+<div id="mensagem_pertinente"></div>
+
+</body>
+</html>
+<script>
+    // Se essa lista fica vazia, então pode ser adicionado mais de um elemento sempre retornando um novo comprimento dessa array.
+var lista_filme = [] 
+function cadastrar_filme(){
+var filme = inp_filme.value;
+
+lista_filme.push(filme)
+}
+function filme_favorito(){
+        mensagem_pertinente.innerHTML = `Total: ${lista_filme.length + 0}<br>
+        O que mais gosta é ${lista_filme[0]}<br>
+        O que menos gosta é ${lista_filme[lista_filme.length - 1]}
+        `
+    
+}
+
+</script>

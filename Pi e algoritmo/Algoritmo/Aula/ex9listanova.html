@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> <center>
+    Altura inicial: <input type="number" id="alt_in"><br>
+    Altura final: <input type="number" id="alt_fin"><br>
+    Seu nome: <input type="text" id="nome_pes"><br>
+    Sua altura: <input type="number" id="alt_1"><br>
+   <button onclick="altura_1()">Altura está no intervalo</button>
+<div id="divisao"></div>
+</body></center>
+</html>
+<script>
+    function altura_1(){
+        var altura_inicial = Number(alt_in.value)
+        var altura_final = Number(alt_fin.value)
+        var Nome = nome_pes.value
+        var altura = Number(alt_1.value)
+        if(altura_final < altura_inicial){
+            alert('Não seguir em frente')
+        }if(altura >= altura_inicial && altura <= altura_final){
+            divisao.innerHTML = `
+            O candidato ${Nome} com altura de ${altura} participará do processo de seleção de piloto.
+            `
+        }else 
+        divisao.innerHTML = `
+        Infelizmente o candidato ${nome} com altura de ${altura} não atende os requisitos
+        `
+    }
+</script>

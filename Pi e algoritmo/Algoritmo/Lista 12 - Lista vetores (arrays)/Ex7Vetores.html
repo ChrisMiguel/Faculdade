@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 7</title>
+</head>
+<body>
+    Filmes que você mais gosta: <br><input type="text" id="inp_filme"><br>
+    <button onclick="cadastrar_filme()">Cadastrar</button><br>
+    
+<div id="inp_mensagem"></div>
+
+</body>
+</html>
+<script>
+    // Se essa lista fica vazia, então pode ser adicionado mais de um elemento sempre retornando um novo comprimento dessa array.
+var lista = [] 
+function cadastrar_filme(){
+var filme = inp_filme.value;
+
+lista.push(filme);
+inp_mensagem.innerHTML='';
+for(var contador = 0; contador < lista.length; contador++){
+    var lista_filme = lista[contador]
+    inp_mensagem.innerHTML+= `${lista[contador]}<br>`
+    
+}
+if(contador % 2 == 0){
+    inp_mensagem.innerHTML+= `<span style='color: blue'>${lista_filme}</span><br>`
+}else{
+    inp_mensagem.innerHTML+= `<span style='color: red'>${lista_filme}</span><br>`
+}
+
+}
+
+
+</script>

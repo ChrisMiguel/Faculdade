@@ -1,0 +1,52 @@
+.caixa_formulario {
+    background: white;
+    width: 350px;
+    height: 450px;
+    color: palevioletred;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0px;
+}
+
+.caixa_formulario h1 {
+    font-size: 35px;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+}
+
+.formulario button {
+    margin-top: 10px;
+    background: #e1374e;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    width: 120px;
+    align-self: center;
+    cursor: pointer;
+}
+
+
+.formulario input {
+    padding: 10px 15px;
+    text-align: center;
+    border: 2px solid rgb(82, 143, 196);
+    border-radius: 10px;
+}
+
+.formulario span {
+    font-size: 20px;
+}
+.banner {
+    background-image: url("C:\algoritmo_sis1\Pi\flexbox\img/bg-jelly-fish-para_outras_pags.png");
+    height: 500px;
+    color: #000000;
+    display: flex;
+}

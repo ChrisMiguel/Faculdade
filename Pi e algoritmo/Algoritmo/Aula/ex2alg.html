@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+Quantidade de chocolates comprados: <input type="number" id="qtd_choc"><br>
+    <button onclick="compra_choc()">
+Compra
+    </button>
+<div id="div_choc"></div>
+</body>
+</html>
+<script>
+function compra_choc(){
+var valor = Number(qtd_choc.value)
+var custo = Number(valor * 3)
+var custo2 = Number(valor * 2.5)
+div_choc.innerHTML = `
+O valor da sua compra é de R$${custo}
+`
+if (valor >= 12){
+div_choc.innerHTML = `
+O valor da sua compra é de R$${custo2}
+`
+}
+}
+
+</script>

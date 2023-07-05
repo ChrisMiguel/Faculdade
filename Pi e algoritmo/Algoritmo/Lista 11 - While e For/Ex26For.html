@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 26</title>
+</head>
+<body>
+
+    Número <br><input type="Number" id="inp_numeros" min="10" max="500">
+    <br>
+    <button onclick="somar_pares()">somar pares</button><br>
+<div id="mensagem"></div>
+</body>
+</html>
+<script>
+    var soma = 0;
+    function somar_pares(){
+        var numero = Number(inp_numeros.value);
+        
+    if(numero > 500 || numero < 10){
+        alert('Coloque números entre 10 e 500')   
+} else {
+    for (var contador = 1; contador <= numero; contador ++){
+    if(numero % 2 == 0){
+    mensagem.innerHTML += `
+${contador}<br>
+`
+soma += contador;
+}
+}
+mensagem.innerHTML += `
+Soma dos pares: ${soma} <br>
+`
+
+}
+    }
+</script>

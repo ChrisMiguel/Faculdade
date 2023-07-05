@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8</title>
+</head>
+<body>
+    Nomes dos alunos: <br><input type="text" id="inp_filme"><br>
+    <button onclick="cadastrar_aluno()">Cadastrar</button><br>
+    
+<div id="inp_mensagem"></div>
+
+</body>
+</html>
+<script>
+    // Se essa lista fica vazia, então pode ser adicionado mais de um elemento sempre retornando um novo comprimento dessa array.
+var lista = [] 
+function cadastrar_aluno(){
+var filme = inp_filme.value;
+
+lista.unshift(filme);
+inp_mensagem.innerHTML='';
+for(var contador = 0; contador < lista.length; contador++){
+    inp_mensagem.innerHTML+= `${lista[contador]}<br>`
+    
+}
+
+}
+
+
+</script>

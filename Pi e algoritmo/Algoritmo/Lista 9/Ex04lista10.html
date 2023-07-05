@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bart simpsons</title>
+</head>
+<body>
+    <button onclick="andarE()">Mover p/ esquerda</button>
+    <button onclick="andarD()">Mover p/ direita</button><br>
+    Quantidade de pixels: <input type="number"  id="pixel1"><br>
+    <img id="img_bart" style="width: 150px;" src="https://montinkantigo.s3.amazonaws.com/data/camisas/bart-andando-de-skate---os-simpsons-5bd3dff1c29d5-estampa-300.png" alt="">
+</body>
+</html>
+<script>
+var distancia = 0;
+function andarD(){
+    var pixels = Number(pixel1.value)
+    distancia += pixels 
+    img_bart.style.marginLeft = `${pixels}px`
+}
+function andarE(){
+var pixels = Number(pixel1.value)
+distancia -= pixels 
+    img_bart.style.marginLeft = `${pixels}px`
+}
+
+</script>

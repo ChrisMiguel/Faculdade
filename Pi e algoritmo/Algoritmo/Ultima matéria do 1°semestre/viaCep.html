@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEP</title>
+</head>
+
+<body>
+    CEP<br><input oninput="buscarCEPThenCatch()" type="text" id="input_cep"><br>
+    Logradouro<br><input type="text" id="input_logradouro"><br>
+    <!-- <button onclick="buscarCEP()">Buscar CEP</button> -->
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+<script>
+    function buscarCEP() {
+        var cep = input_cep.value;
+        var url = `https://viacep.com.br/ws/${cep}/json/` //Essa url serve para puxar os dados diretamente do site requisitado//
+
+
+
+        if (cep.length >= 8) {
+            fetch(url) //O fetch é utilizado para capturar os dados que o usuário colocou//
+                .then(function (resposta) {
+                    console.log('Deu certo!')
+                    console.log('Resposta:', resposta);
+                    console.log(fetch(url))
+
+                    resposta.json()
+                        .then(
+                            function (respostaJson) {
+                                console.log('JSON:', respostaJson)
+                                console.log('Logradouro: ' + respostaJson.logradouro);
+
+                                div_mensagem.innerHTML = `CEP: ${respostaJson.cep}<br>
+                            Logradouro: ${respostaJson.logradouro}<br>`;
+                                input_logradouro.value = respostaJson.logradouro;
+                            }
+                        );
+
+                })
+                .catch(function (erro) { //Já o .catch e .then são usados para confirmar a obtenção dos dados e mostrar no console ou onde você deseja//
+                    console.log('ERRO!:');
+                    console.log(erro)
+
+                }
+                )
+
+        }
+    }
+
+    async function buscarCEPThenCatch() {
+        var cep = input_cep.value;
+        var url = `https://viacep.com.br/ws/${cep}/json/` //Essa url serve para puxar os dados diretamente do site requisitado//
+
+
+
+        if (cep.length >= 8) {
+            fetch(url) //O fetch é utilizado para capturar os dados que o usuário colocou//
+            try {
+                var resposta = await fetch(url);
+
+                if (resposta.ok) {
+                    var respostaJson = await resposta.json;
+
+                    console.log('JSON:', respostaJson)
+                    console.log('Logradouro: ' + respostaJson.logradouro);
+
+                    div_mensagem.innerHTML = `CEP: ${respostaJson.cep}<br>
+                            Logradouro: ${respostaJson.logradouro}<br>`;
+                    input_logradouro.value = respostaJson.logradouro;
+                }
+            }
+                catch (e){
+                    console.log('Erro', e);
+                }
+            }
+        
+    }
+            
+    //             .catch (function (erro) { //Já o .catch e .then são usados para confirmar a obtenção dos dados e mostrar no console ou onde você deseja//
+    //             console.log('ERRO!:');
+    //             console.log(erro)
+
+    //         }
+    //             )
+    //     }
+
+    // } catch (e) {
+    //     console.log('Erro:', e)
+    // }
+
+                // .then(function (resposta) {
+                //     console.log('Deu certo!')
+                //     console.log('Resposta:', resposta);
+                //     console.log(fetch(url))
+
+                //     resposta.json()
+                //         .then(
+                //             function (respostaJson) {
+                //                 console.log('JSON:', respostaJson)
+                //                 console.log('Logradouro: ' + respostaJson.logradouro);
+
+                //                 div_mensagem.innerHTML = `CEP: ${respostaJson.cep}<br>
+                //             Logradouro: ${respostaJson.logradouro}<br>`;
+                //                 input_logradouro.value = respostaJson.logradouro;
+                //             }
+                //         );
+
+                // })
+                // .catch(function (erro) { //Já o .catch e .then são usados para confirmar a obtenção dos dados e mostrar no console ou onde você deseja//
+                //     console.log('ERRO!:');
+                //     console.log(erro)
+
+                // }
+                // )
+
+        
+    
+</script>

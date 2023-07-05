@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8</title>
+</head>
+<body>
+    <input type="number" id="numero" min="0" max="200"><br>
+    <button onclick="viva()" >Viva o 7</button>
+<div id="mensagem"></div>
+</body>
+</html>
+<script>
+    function viva(){
+        var numero1 = Number(numero.value);
+        var conta = 0;
+
+        while(conta <= numero1){
+            if (conta %7 == 0){
+                mensagem.innerHTML += `${conta}<br>`
+            }
+        conta += 1;
+    }
+}
+</script>

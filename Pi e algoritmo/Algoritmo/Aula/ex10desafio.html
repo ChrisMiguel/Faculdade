@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio</title>
+</head>
+<body>
+   Lado 1: <input type="number" id="lado1"><br>
+   Lado 2: <input type="number" id="lado2"><br>
+   Lado 3: <input type="number" id="lado3"><br>
+<button onclick="verificar()">Verificar</button>
+
+</body>
+</html>
+<script>
+    function verificar(){
+var lado_1 = Number(lado1.value)
+var lado_2 = Number(lado2.value)
+var lado_3 = Number(lado3.value)
+
+if(lado_1 == lado_2 + lado_3 || lado_2 == lado_1 + lado_3 || lado_3 == lado_1 + lado_2){
+alert('Coloque novas medidas')
+}
+
+if(lado_1 < 0 || lado_2 < 0 || lado_3 < 0 ){
+alert("Coloque medidas positivas")
+}
+if(lado_1 == lado_2 && lado_2 == lado_3){
+    alert("Equilátero")
+}if(lado_1 != lado_2 != lado_3){
+alert('Escaleno')
+}
+if (lado_1 == lado_2 && lado_1 == lado_3 && lado_2 == lado_3 ){
+alert('Isósceles')
+}
+    }
+</script>

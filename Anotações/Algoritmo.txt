@@ -1,0 +1,8 @@
+Algoritmo - Java Script
+Porque colocar o "number" no código?
+Porque tem que converter o texto do numero em numero, colocar o numero no lugar dele.
+input*3 (atalho para multiplicar em 3 caixas de texto)
+VAR NUMERO1 = Number(input_numero1.value)
+alert('Realizando multiplicação')
+ctrl+alt = Consegue usar 2 linhas e mexe em uma palavra
+div_manipulavel.inneHTML (Saber o interior da sua div, sendo para leitura mas também para reatribuir o texto da div)14:01 23/02/202			x		 

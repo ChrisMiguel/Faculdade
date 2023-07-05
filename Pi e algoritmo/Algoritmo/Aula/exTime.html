@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Escolha um time abaixo: <br/>
+    Corinthians <br/>
+    São Paulo <br/>
+    Palmeiras<br/>
+    Santos<br/><br/>
+    Qual dos times você torce? <input type="text" id="input_time"><br/>
+    <button onclick="sobre_time()">
+    Fale sobre esse time
+    </button>
+    <span id="span1"></span>
+</body>
+</html>
+<script>
+    function sobre_time(){
+        var time = input_time.value
+        
+    if (time == 'Corinthians'){
+    span1.innerHTML = `<span style="color: white; background: black;"> Salve o Corinthians! <span/>`
+}
+ if(time == 'Palmeiras'){
+    span1.innerHTML = `<span style="color: white; background: green;"> Salve o alviverde imponente! <span/>`
+}
+ if(time == 'Santos'){
+    span1.innerHTML = `<span style="color: preta; background: white;"> Agora quem dá a bola é o Santos! <span/>`
+}
+ if(time == 'São Paulo'){
+    span1.innerHTML = `<span style="color: red; background: black;"> Salve o Tricolor paulista! <span/>`
+}
+    }
+</script>

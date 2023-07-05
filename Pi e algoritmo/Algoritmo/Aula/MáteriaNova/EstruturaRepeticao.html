@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="contar_for()">Contar com For</button>
+    <button onclick="contar_while()">Contar com While</button>
+    <div id="div_contagem"></div>
+</body>
+</html>
+
+<script>
+
+    function contar_while() {
+        var contador = 0
+        div_contagem.innerHTML = "Contando com While... <br>";
+            while (contador < 15) {
+            contador++ // incrementa antes de exibir, então começa no 0
+            div_contagem.innerHTML += contador + "<br>";
+        }
+    }
+
+    function contar_for() {
+        div_contagem.innerHTML = "Contando com For... <br>";
+        for ( var contador = 1; contador <= 15 ; contador++ ) { // incrementa no final, então começa do 1
+        div_contagem.innerHTML += contador + "<br>";
+        } 
+    }
+
+    /*
+        o "for" também representa uma estrutura de repetição, assim como o "while";
+
+        a principal diferença é que o "for" é mais adequado para situações em que sabemos exatamente quantas vezes uma tarefa precisa ser executada (vou repetir 5 vezes);
+        o while é mais adequado para situações em que não sabemos exatamente quantas vezes a tarefa precisa ser executada e depende de uma condição (vou repetir até chover canivete);
+
+        a estrutura de repetição "for" é composta por 3 partes: 
+            comando 1 - um comando que será executado antes de entrar na estrutura de repetição (normalmente usado para definir/iniciar o contador);
+            comando 2 - a condição de repetição, que será testada a cada repetição do loop, para ver se deve executar ou não o bloco de código;
+            comando 3 - um comando que será executado após o bloco de código definido, antes de realizar novamente o teste da condição para repetir o loop (normalmente usado para atualizar o contador);
+        
+        for ( "comando 1" ; "comando 2" ; "comando 3" ) {}   
+        for ( comando antes de iniciar o loop;  condição de repetição;  comando na última linha virtual do for ) { ... }
+
+
+        exemplo de execução acima: 
+
+            for (var i = 1; i <= 15; i++) { 
+                div_mensagem.innerHTML += `Contando... ${i} <br>`;
+            }   
+
+        representa a mesma coisa que: 
+
+            var i = 1;
+            while (i <= 15) { 
+                div_mensagem.innerHTML += `Contando... ${i} <br>` 
+                i++; 
+            }
+
+        em termos de desempenho, não há uma diferença significativa entre o for e o while, pois ambos executam a mesma tarefa;
+        a escolha entre um e outro depende da situação específica em que estão sendo utilizados e do programador;
+
+        O   BS: o termo "i" para o contador vem de "índice", normalmente utilizado para realizar uma contagem ou percorrer algum texto/lista;
+    */
+</script>

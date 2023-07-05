@@ -1,0 +1,26 @@
+Grupo 4;
+Tema: Marmita;
+Regras de condução: 
+2 reuniões por semana, dias: segunda (fixa) e quarta (pode mudar);
+Horário: 20h - (tempo indeterminado);
+Toda reunião tem "ata"
+Cada reunião, uma pessoa tem que ser usada como "cliente".
+
+
+Em relação ao Projeto Marmita:
+° Contexto °
+Dados para vender para a empresa - quantas pessoas passam por tal região em tal horário;
+Pode ser usado para uma venda maior de produtos como a marmita que tem potencial de alimentação sáudavel
+e pode ser usado para pessoas que não tem "tempo" no seu horário de almoço, como fazer tal pedido 
+no Mcdonalds.
+
+
+Objetivo: 
+- Coletar dados para ter uma venda grande de marmita, que é possívelmente desejada em algumas regiões;
+
+- Arrumar a calculadora financeira;
+
+- Rever a ideia do projeto;
+
+- Trello e github já estão feitos;
+

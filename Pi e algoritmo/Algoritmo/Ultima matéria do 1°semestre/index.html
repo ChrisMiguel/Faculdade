@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+
+
+    function partition(arr, start, end) {
+        // Tomando o último elemento como pivô
+        const pivotValue = arr[end];
+        let pivotIndex = start;
+        for (let i = start; i < end; i++) {
+            if (arr[i] < pivotValue) {
+                // Trocando elementos
+                [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
+                // Movendo para o próximo elemento
+                pivotIndex++;
+            }
+        }
+
+        // Colocando o valor pivô no meio
+        [arr[pivotIndex], arr[end]] = [arr[end], arr[pivotIndex]]
+        return pivotIndex;
+    };
+
+    
+
+    function quickSortIterative(arr) {
+        // Criando um array que usaremos como uma pilha, usando as funções push() e pop()
+        stack = [];
+
+        // Adicionando todo o array inicial como um "subarray não classificado"
+        stack.push(0);
+        stack.push(arr.length - 1);
+
+        // Não há uma função peek () explícita
+        // O loop se repete enquanto tivermos subarrays não classificados
+        while (stack[stack.length - 1] >= 0) {
+
+            // Extraindo o subarray não classificado superior
+            end = stack.pop();
+            start = stack.pop();
+
+            pivotIndex = partition(arr, start, end);
+
+            // Se houver elementos não classificados à "esquerda" do pivô,
+            // adicionamos esse subarray à pilha para que possamos classificá-lo mais tarde
+            if (pivotIndex - 1 > start) {
+                stack.push(start);
+                stack.push(pivotIndex - 1);
+            }
+
+            // Se houver elementos não classificados à "direita" do pivô,
+            // adicionamos esse subarray à pilha para que possamos classificá-lo mais tarde
+            if (pivotIndex + 1 < end) {
+                stack.push(pivotIndex + 1);
+                stack.push(end);
+            }
+        }
+    }
+
+    ourArray = [7, -2, 4, 1, 6, 5, 0, -4, 2]
+    quickSortIterative(ourArray)
+
+    console.log(ourArray)
+
+    
+</script>

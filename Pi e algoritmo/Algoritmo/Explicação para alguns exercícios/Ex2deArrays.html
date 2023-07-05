@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+
+<body>
+    Destino de viagem: <br> <input type="text" id="inp_destino"><br>
+    <button onclick="add_destino()">Adicionar</button>
+    <button onclick="add_destino1()">Primeira viagem</button>
+    <button onclick="add_destino3()">Terceira viagem</button>
+    <button onclick="add_destino4()">Última viagem</button>
+
+    <div id="destino1"></div>
+
+</body>
+
+</html>
+
+<script>
+    var lista_viagem = [] //Essa variável é vazia para adicionar os elementos. Eles vão ficar na caixa sem aparecer para o usuário. //
+
+    function add_destino() {
+        var destino = inp_destino.value;
+        lista_viagem.push(destino); //Esse .push é utilizado para pegar a palavra que foi escrita na input e adicionar na lista, sempre aumentando seu tamanho (length);//
+    }
+    function add_destino1() {
+        if (lista_viagem.length == 0) { //Utilizei o length para pegar exatamente a primeira posição que seria o (0)//
+            destino1.innerHTML = `Ainda não viajou`
+        } else {
+            destino1.innerHTML = `${lista_viagem[0]}`//Utilizei o [0] porque eu quero captar a primeira posição da minha lista de viagens;//
+        }
+
+    }
+    function add_destino3() {
+        if (lista_viagem.length < 3) { //Usei o < 3 para identificar que quero saber se a lista de viagens tem menos do que 3 viagens cadastradas;//
+            destino1.innerHTML = `Ainda não fez a 3° viagem`
+        } else {
+            destino1.innerHTML = `${lista_viagem[2]}` //Aqui para pegar a terceira posição das viagens//
+        }
+    }
+
+    function add_destino4() {
+        if (lista_viagem.length == -1) {
+            destino1.innerHTML = `Ainda não viajou`
+        }else{
+            destino1.innerHTML = `${lista_viagem[lista_viagem.length - 1]}`//Aqui utilizei [] para receber diretamente da minha lista e coloquei ela dentro para pegar o tamanho dela e captar o último registro feito//
+        }
+    }
+</script>

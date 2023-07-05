@@ -1,0 +1,30 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicío 11</title>
+</head>
+<body>
+    Quantas voltas o carro dará na corrida: <br><input type="number" id="voltas">
+<button onclick="corrida()">Iniciar corrida</button>
+<div id="mensagem"></div>
+</body>
+</html>
+<script>
+    function corrida(){
+        var número = 1;
+        var volta = Number(voltas.value);
+       
+        while (número <= volta){
+         mensagem.innerHTML +=
+         `Carro dando a ${número}ª volta <br>`
+        número += 1;
+        }if(número == volta + 1){
+            mensagem.innerHTML += `Corrida finalizada`
+        }
+    
+    
+    }
+</script>

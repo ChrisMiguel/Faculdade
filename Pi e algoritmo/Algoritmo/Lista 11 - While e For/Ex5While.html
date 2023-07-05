@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicío 5</title>
+</head>
+<body>
+    <button onclick="dizer()">Números cabalísticos</button>
+    <div id="msg_input"></div>
+</body>
+</html>
+<script>
+    function dizer(){
+
+    var quantidade = 1;
+    
+while(quantidade <= 30){
+    if(quantidade != 3 && quantidade != 4 && quantidade != 7 && quantidade != 10 && quantidade != 12){
+            msg_input.innerHTML  += quantidade + "<br>"    
+        }
+        quantidade += 1;
+    }
+}    
+</script>

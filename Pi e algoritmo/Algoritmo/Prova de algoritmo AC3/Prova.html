@@ -1,0 +1,145 @@
+(Sem assunto)
+HENRIQUE LIPERT CONDE .
+CHRISTIAN SILVERIO MIGUEL BELLEI .
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova AC3</title>
+</head>
+
+<body>
+
+    <h1>Antiquário Velho Valioso</h1>
+    <br><br>
+    <h2>Entrada de dados para cadastramento</h2>
+    <br>
+    Código da peça
+    <input id="codigo_input">
+    Valor da peça
+    <input id="valor_input">
+    <button onclick="cadastrarProduto()">Cadastrar</button>
+    <br>
+    <br>
+    <h2>Ajuste de preço</h2>
+    Código da peça inicial
+    <input id="codigo_inicial_input">
+    Código da peça final
+    <input id="codigo_final_input">
+    <br>
+    Percentual de reajuste
+    <input id="percentual_input">
+    <button onclick="reajustar()">Ajustar</button>
+    <br>
+    <br>
+    <div id="mensagem_ajuste"></div>
+</body>
+
+</html>
+
+<script>
+
+    var codigo = Number(codigo_input.value)
+    var valor = Number(valor_input.value)
+    var listaProdutos = []
+
+    function cadastrarProduto() {
+        var codigo = Number(codigo_input.value)
+        var valor = Number(valor_input.value)
+
+        if (codigo >= 1000 && codigo <= 3999) {
+            if (valor >= 100) {
+                listaProdutos.push([codigo, valor]);
+                console.log(listaProdutos)
+            } else {
+                alert("Valor do preço deve ser maior que 100.");
+            }
+        } else {
+            alert("Valor do codigo deve estar entre 1000 e 3999.")
+            if (valor < 100) {
+                alert("Valor do preço deve ser maior que 100.")
+            }
+        }
+    }
+
+
+
+    function reajustar() {
+        var codigoInicial = Number(codigo_inicial_input.value)
+        var codigoFinal = Number(codigo_final_input.value)
+        var percentual = Number(percentual_input.value)
+
+        if (percentual != 0) {
+            if (listaProdutos.length > 0) {
+                mensagem_ajuste.innerHTML = ""
+
+                var mensagemAjuste = ""
+
+                for (var i = 0; i < listaProdutos.length; i++) {
+                    var codigo = listaProdutos[i][0]
+                    var valorAnterior = listaProdutos[i][1]
+                    var valorAjustado = valorAnterior * (1 + percentual / 100)
+
+                    if (codigo >= codigoInicial && codigo <= codigoFinal) {
+                        mensagemAjuste +=
+                            "Código da peça = " +
+                            codigo +
+                            " - Valor Anterior: " +
+                            valorAnterior.toFixed(2) +
+                            " Valor ajustado = " +
+                            valorAjustado.toFixed(2) +
+                            "<br>"
+                    }
+                }
+
+                mensagem_ajuste.innerHTML = mensagemAjuste
+
+                var totalRegistrosAjustados = 0
+                var valorTotalPecasAjustadas = 0
+                var menorValorAjustado = Infinity
+
+                for (var i = 0; i < listaProdutos.length; i++) {
+                    var codigo = listaProdutos[i][0]
+                    var valorAnterior = listaProdutos[i][1]
+                    var valorAjustado = valorAnterior * (1 + percentual / 100)
+
+                    if (codigo >= codigoInicial && codigo <= codigoFinal) {
+                        totalRegistrosAjustados++
+                        valorTotalPecasAjustadas += valorAjustado
+                        if (valorAjustado < menorValorAjustado) menorValorAjustado = valorAjustado
+                    }
+                }
+
+                var resumoAjuste =
+                    "RESUMO DO AJUSTE das Peças de " +
+                    codigoInicial +
+                    " até " +
+                    codigoFinal +
+                    "<br>" +
+                    "Total de registros ajustados: " +
+                    totalRegistrosAjustados +
+                    "<br>" +
+                    "Valor total das peças com preço ajustado: " +
+                    valorTotalPecasAjustadas.toFixed(2) +
+                    "<br>" +
+                    "Valor médio das peças com preço ajustado: " +
+                    (valorTotalPecasAjustadas / totalRegistrosAjustados).toFixed(2) +
+                    "<br>" +
+                    "Menor valor após o ajuste: " +
+                    menorValorAjustado.toFixed(2)
+
+                mensagem_ajuste.innerHTML += "<br>" + resumoAjuste
+            } else {
+                alert("O ajuste é realizado somente após o cadastramento das peças e não seguir em frente.")
+            }
+        } else {
+            alert("Entre com o percentual de ajuste.")
+        }
+    }
+
+
+
+</script>

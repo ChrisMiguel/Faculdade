@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantidade de votos do canditato A: <input id='input_eleiçaoA'input type="number"><br><br>
+    Quantidade de votos do canditato B: <input id='input_eleiçaoB'input type="number"><br><br>
+    Quantidade de votos em branco: <input id='input_eleiçaoBr'input type="number"><br><br>
+    Quantidade de votos nulos: <input id='input_eleiçaoN'input type="number"><br><br>
+    <button onclick="Eleiçao()">Resultados da eleição</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    function Eleiçao() {
+        var eleiçaoA = Number(input_eleiçaoA.value)
+        var eleiçaoB = Number(input_eleiçaoB.value)
+        var eleiçaoBr = Number(input_eleiçaoBr.value)
+        var eleiçaoN = Number(input_eleiçaoN.value)
+        
+        var eleiçaoA = eleiçaoA * 0.40;
+        var eleiçaoB = eleiçaoB * 0.35;
+        var eleiçaoBr = eleiçaoBr * 0.125;
+        var eleiçaoN = eleiçaoN * 0.125;
+    }
+        function somar() {
+            (input_eleiçaoBr + input_eleiçaoN); 
+    div_resultado.innerHTML= `
+    Total de votos 
+    Candidato A 
+    Candidato B
+    Inválidos`
+        }
+
+
+</script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual sua idade? <input type="number" id="idade_num"><br>
+    Você tem habilitação? <input type="text" id="habi_num"><br>
+    Qual o seu sexo? Apenas 'H' ou 'M' <input type="text" id="sexo_value">
+   <br> <button onclick="dirigir_com()">
+Posso dirigir?
+    </button>
+<div id="divisao"></div>
+</body>
+</html>
+<script>
+    function dirigir_com(){
+        var idade = Number(idade_num.value)
+       var sexo = sexo_value.value
+        var Habilitação = habi_num.value
+        if(idade >= 18 && Habilitação == 'sim' && sexo == 'H'){
+divisao.innerHTML = `
+Você ja tem ${idade} anos, já pode dirigir, mas é bração!
+`}else if(idade >= 18 && Habilitação == 'sim' && sexo == "M"){
+    divisao.innerHTML = `
+    Você pode dirigir, mas é braçona
+    `
+}
+else{
+    divisao.innerHTML = `
+    Você não pode dirigir!
+    `
+}
+}
+</script>

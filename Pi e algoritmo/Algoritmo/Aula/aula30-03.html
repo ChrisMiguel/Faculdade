@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula</title>
+</head>
+<body>
+    Valor da sua renda individual: <input type="number" id="rendinha"><br>
+Valor da renda familiar: <input type="number" id="rendao"><br>      
+
+    <button onclick="beneficio()">Terei o benefício</button>
+<div id="divisao"></div>
+</body>
+</html>
+<script>
+    function beneficio(){
+        var  renda_ind = Number(rendinha.value)
+        var renda_fml = Number(rendao.value)
+   if (renda_ind >= 2000 || renda_ind <= 3000){
+divisao.innerHTML = `
+Você terá direito ao auxílio
+`
+}
+else{
+    divisao.innerHTML = `
+    Sem direito ao auxílio
+    `
+}
+   }
+</script>

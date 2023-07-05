@@ -1,0 +1,23 @@
+Delay: 
+'A gente ta testando, se não o banco enche muito rápido e as informações não param;'
+Por isso é sempre bom colocar um delay bom e não muito pequeno se não a máquina pega muita informação;
+Delay 'Estoura o banco';
+A temperatura é variável, ela não muda repentinamente por exemplo: De 10° para 30°;
+Delay muito pequeno deixa um 'borrão' na tela e não deixa pegar as informações que o cliente quer;
+
+Float: Usado para números decimais;
+Void: Uma entrada com saída;
+Void Loop: Uma entrada sem saída e em 'loopping';
+'temperatura': Palavra chave que foi usada para identificar a temperatura;
+Serial.print: Código usado para exibir os registros na tela, no caso ("Temperatura": "(aqui vai ser exibida a temperatura em número)";
+"Temperatura": Palavra que vai ser exibida no banco de dados;
+Seria.println: Esse 'ln' seria "New Line", adicionaria uma nova linha para não ficar tudo junto;
+Exemplo:
+Com 'ln':
+25°
+26.8°
+27°
+
+Sem 'ln':
+25° 26.8° 27°
+(Só complicaria a vida de quem usaria esses códigos no banco de dados).

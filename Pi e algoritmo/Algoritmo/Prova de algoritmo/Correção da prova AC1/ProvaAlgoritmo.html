@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Valor do seu salário: <input type="number" id="salario"><br>
+    Valor do seu Adicional mensal: <input type="number" id="addmensal"><br>
+    Valor do seu bônus: <input type="number" id="salario_bonus"><br>
+<button onclick="analisar_renda()">Analisar minha renda</button>
+<div id="div"></div>
+</body>
+</html>
+<script>
+    function analisar_renda() {
+var salario1 = Number(salario.value)
+var mensal = Number(addmensal.value)
+var bonus = Number(salario_bonus.value)
+var salario_total = (salario1 + mensal + bonus)
+var imposto_renda = Number(salario_total * 0.125)
+var salario_renda = Number(salario_total - imposto_renda)
+var Inss = Number(imposto_renda * 0.1)
+var desconto3 = Number(imposto_renda * 0.8)
+var Fgts = Number(imposto_renda - desconto3)
+var desconto_total = (imposto_renda + Inss + Fgts)   
+var salario_liquido = Number(salario_total - desconto_total) 
+var desconto4 = Number(salario_liquido * 0.15)
+var armazém = Number(salario_total * 12)
+var um_ano = Number(armazém * 0.15)
+div.innerHTML = `
+Análise da sua renda<br>   
+Seu salário bruto é de: R$${salario_total}<br>
+    O seu imposto de renda é de: R$${0}<br>
+    O seu INSS é de: R$${Inss}<br>
+    O seu FGTS é de: R$${Fgts}<br>
+    O seu salário líquido é de: R$${salario_liquido}.
+    `;
+if (salario_total >= 10000) {
+    div.innerHTML = 
+    `
+    Análise da sua renda<br>
+    Seu salário bruto é de: R$${salario_total}<br>
+    O seu imposto de renda é de: R$${imposto_renda}<br>
+    O seu INSS é de: R$${Inss}<br>
+    O seu FGTS é de: R$${Fgts}<br>
+    O seu salário líquido é de: R$${salario_liquido}.<br>
+    `;
+    if (salario_liquido > 2500){
+       div.innerHTML += 
+    `Análise da sua renda<br>
+    Com a renda de R$${salario_liquido}, é recomendado poupar R$${desconto4}, para que em um ano tenha poupado R$${um_ano}.
+`
+
+    }
+    
+
+}
+    }
+</script>

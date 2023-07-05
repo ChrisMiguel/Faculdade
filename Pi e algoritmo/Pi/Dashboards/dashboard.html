@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboards</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body style="display: flex;">
+    <div>
+        <canvas id="myChart" style="position: relative; height:40vh; width:40vw"></canvas>
+      </div>
+      <div>
+        <canvas id="myChart2" style="position: relative; height:40vh; width:40vw"></canvas>
+      </div>
+      <div>
+      <canvas id="myChart3" style="position: relative; height:40vh; width:40vw"></canvas>
+    </div>
+</body>
+<script>
+    const ctx = document.getElementById('myChart');
+   
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+        datasets: [{
+          label: 'Temperatura',
+          data: [30, 29, 28, 25, 22, 23],
+          borderWidth: 3
+        },
+        {
+          label: 'Umidade',
+          data: [80, 82, 80, 85, 80, 83, 83],
+          borderWidth: 3
+        }
+    ]
+    },
+    
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+    const config = {
+        type: 'line',
+        data: data,
+        options: {}};
+
+  </script>
+  <script>
+    const ctx2 = document.getElementById('myChart2');
+  
+    new Chart(ctx2, {
+      type: 'line',
+      data: {
+        labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+        datasets: [{
+          label: 'Temperatura (em °C)',
+          data: [22, 24, 27, 23, 20, 18],
+          borderWidth: 3
+        },
+        {
+          label: 'Umidade (em %)',
+          data: [90, 89, 93, 87, 88, 82],
+          borderWidth: 3
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+<script>
+const ctx3 = document.getElementById('myChart3');
+  
+new Chart(ctx3, {
+  type: 'line',
+  data: {
+    labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+    datasets: [{
+      label: 'Temperatura (em °C)',
+      data: [22, 24, 27, 23, 20, 18],
+      borderWidth: 3
+    },
+    {
+      label: 'Umidade (em %)',
+      data: [90, 89, 93, 87, 88, 82],
+      borderWidth: 3
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
+</script>
+   
+
+  <script>
+    const myChart = new Chart(ctx('myChart'), config
+);
+
+
+const myChart2 = new Chart(ctx2('myChart2'), config
+
+);
+
+const myChart3 = new Chart(ctx3('myChart3'), config
+
+);
+  </script>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 15</title>
+</head>
+<body>
+    Nome do produto: <br> <input id="ipt_produto"><br>
+    Preço de compra: <br> <input id="ipt_valor"><br>
+    <button onclick="Cadastro()">Cadastrar</button><br>
+    <button onclick="relato()">Ver relatório</button>
+    <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+    var lista = []
+    var lista2 = []
+
+    var soma = 0; 
+
+    var Produto_Caro = ""; 
+x
+    var Preco_Caro = 0; 
+
+    var Produto_Barato = ""; 
+
+    var Preco_Barato = 0;
+
+    
+
+    function Cadastro() {
+        var NomeProduto = ipt_produto.value;
+        var PrecoCompra = Number(ipt_valor.value);
+        // var venda = valor * 1.25;
+       
+        lista.push(NomeProduto);
+        lista2.push(PrecoCompra);
+        // lista3.push(venda);
+        // var resul_prod = sum(lista2)
+
+        if(Produto_Caro == 0 && Produto_Barato == 0){   
+
+            Preco_Barato = PrecoCompra;
+
+            Preco_Caro = PrecoCompra;
+
+            Produto_Caro = NomeProduto;
+
+            Produto_Barato = NomeProduto;
+        }
+
+        soma += PrecoCompra; 
+
+        for(var contador = 0; contador < lista2.length; contador++){
+            if(lista2[contador] > Preco_Caro){
+
+                Preco_Caro = lista2[contador]
+
+                Produto_Caro = lista[contador]
+
+            } else if(lista2[contador] < Preco_Barato){
+
+                Preco_Barato = lista2[contador]
+                
+                Produto_Barato = lista[contador]
+            }
+        }
+    }
+
+    
+    function relato() {
+        // var valor = Number(ipt_valor.value);
+
+        resultado.innerHTML += ``
+
+for(var contador = 0; contador < lista2.length && contador < lista.length; contador++) {
+
+    resultado.innerHTML += `Quantidade total dos produtos: ${lista.length}<br> <br>
+
+    Produto ${contador + 1}: ${lista[contador]}<br>
+
+Preço da compra: R$${lista2[contador]}.
+Vender por R$${(lista2[contador] * 1.25)} <br> <br>
+`
+}
+
+resultado.innerHTML += `
+O produto mais caro é ${Produto_Caro} <br> 
+O produto mais barato é ${Produto_Barato} <br>
+A soma dos preços de compra dos produtos é ${soma} <br> 
+A média de preço de venda dos produtos é ${soma / lista2.length} <br>
+
+`
+// Fiquei com muita duvida em como colocar as situações acima
+
+    }
+</script>

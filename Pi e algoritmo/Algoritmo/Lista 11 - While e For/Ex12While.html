@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 12</title>
+</head>
+<body>
+Selecione um número: <select  id="numeros">
+<option id="2">2</option>
+<option id="3">3</option>
+<option id="4">4</option>
+<option id="5">5</option>
+<option id="6">6</option>
+<option id="7">7</option>
+<option id="8">8</option>
+<option id="9">9</option>
+</select><br>
+A tabuada vai até que número? <input type="number" id="tabuada"><br>
+<button onclick="ver_tabuada()">Ver tabuada</button>
+<div id="divisao_input"></div>
+</body>
+</html>
+<script>
+    function ver_tabuada(){
+        var numero = 0;
+        var vezes = Number(tabuada.value);
+        var contador = Number(numeros.value);
+        while(numero < vezes){
+numero += 1;
+         var resultado = numero * contador;
+        }
+        if(numero % 2 == 0){
+            divisao_input.innerHTML += 
+            `<span style= "color: blue"> ${contador} x ${numero} = ${resultado}</span>`;
+        }else{
+            divisao_input.innerHTML = 
+            `<span style= "color: red"> 
+            `
+        }
+    }
+</script>

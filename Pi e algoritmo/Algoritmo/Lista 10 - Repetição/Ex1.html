@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicío 6</title>
+</head>
+<body>
+    Pessoa que você mais ama na vida: <input type="text" id="nomepessoa"><br>
+    Quanto você ama essa pessoa: <input type="number" id="quantidade">    
+<button onclick="amor()">Expressar amor</button>
+<div id="mensagem"></div>
+</body>
+</html>
+<script>
+    function amor(){
+        var números = 1;
+        var amo = Number(quantidade.value)
+        var texto = nomepessoa.value
+       
+        for (var numeros = 0; números <= amo; números ++){
+         mensagem.innerHTML +=
+         `${números} - ${texto}, eu te amo! Sempre lembre disso <br>`
+
+        }
+        
+    }
+        </script>

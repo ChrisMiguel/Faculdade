@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+<body>
+    <button onclick="sortear_time()">Sortear time</button>
+<div id="div_mensagem"></div>
+
+</body>
+
+</html>
+
+<script>
+   var lista_times = ['corinthians', 'palmeiras', 'atletico', 'sao_paulo'];
+    function sortear_time(){
+        var min = 1;
+        var max = 4;
+        var numero = max - min;
+
+        var sortear = Math.random() * numero;
+
+        var resultado = sortear + min;
+        if(resultado.toFixed(0) - 1 == lista_times.indexOf('corinthians')){
+            div_mensagem.innerHTML = `<img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/874.png" style="width: 150px; height: 150px;"/>`
+        }else if(resultado.toFixed(0) - 1 == lista_times.indexOf('palmeiras')){
+            div_mensagem.innerHTML = `<img src="https://a.espncdn.com/i/teamlogos/soccer/500/2029.png" style="width: 150px; height: 150px;"/>`
+        }else if(resultado.toFixed(0) - 1 == lista_times.indexOf('atletico')){
+            div_mensagem.innerHTML = `<img src="https://s.sde.globo.com/media/organizations/2018/03/10/atletico-mg.svg" style="width: 150px; height: 150px;"/>`
+        }else if(resultado.toFixed(0) - 1 == lista_times.indexOf('sao_paulo')){
+            div_mensagem.innerHTML = `<img src="https://a.espncdn.com/i/teamlogos/soccer/500/2026.png" style="width: 150px; height: 150px;"/>`
+        }
+
+
+    }
+</script>

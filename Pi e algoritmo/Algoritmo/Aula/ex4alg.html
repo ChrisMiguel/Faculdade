@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   Temperatura: <input type="number" id="temp1"> °C<br>
+   <button onclick="verificar_clima()"> Verificar clima </button><br>
+<div id="divisao"></div>
+</body>
+</html>
+<script>
+    function verificar_clima(){
+        var clima = Number(temp1.value)
+    if (clima < 10){
+divisao.innerHTML = `
+Está apropriada p/ conservar o alimento <br><img src= "https://www.hojeemdia.com.br/image/policy:1.573556.1628561463:1628561463/image.jpg?f=2x1&w=1000&">
+`    
+} else
+divisao.innerHTML = `
+Inapropriada p/ conservar alimento <br> <img src= "https://images.ifato.com.br/data/noticias/1/39758/big_1529614578443a5e287e3a73fea5b247efe41e50d2.jpg">
+`    
+    }
+</script>

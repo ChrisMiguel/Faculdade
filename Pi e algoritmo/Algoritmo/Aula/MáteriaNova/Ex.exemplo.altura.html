@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Sua altura : <input type="number" id="alt1"><br/>
+    <button onclick="Analisar_estrutura()">Analisar estatura</button>
+<div id="divisao"></div>
+</body>
+</html>
+<script>
+    function Analisar_estrutura(){
+        var altura = Number(alt1.value)
+    if(altura <= 1.65){
+        divisao.innerHTML = `
+        Você pode ser piloto de corrida 
+        `
+    }else if(altura < 1.80)
+      {
+        divisao.innerHTML = `
+        Você pode ser jogador de futebol
+        `
+    }else 
+    divisao.innerHTML = `
+    Você pode ser jogador de vôlei ou basquete"
+    `
+    }
+</script>

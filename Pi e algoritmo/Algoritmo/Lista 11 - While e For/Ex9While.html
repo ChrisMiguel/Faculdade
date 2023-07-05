@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicío 9</title>
+</head>
+<body>
+    Número: <input type="number" id="frase"><br>
+    Sua frase: <input type="text" id="pessoa"><br> 
+<button onclick="papagaio()">Papagaio</button>
+<div id="mensagem"></div>
+</body>
+</html>
+<script>
+    function papagaio(){
+        var tantos = Number(frase.value)
+        var texto = pessoa.value
+        var números = 1;
+        
+        while (números <= tantos){
+        
+            alert (
+         `${números} - ${texto}`)
+        números += 1
+        }
+        
+    }
+        </script>

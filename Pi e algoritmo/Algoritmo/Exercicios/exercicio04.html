@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Valor da pizza:
+    <input id="input_valor_pizza" /><br />
+    Quantidade de amigos reunidos:
+    <input id="input_qtd_amigos" /><br />
+    <button onclick="verificar_divisao()">Rola a pizza?</button>
+    <div id="div_resultado"></div>
+  </body>
+</html>
+<script>
+  function verificar_divisao() {
+    var valorPizza = Number(input_valor_pizza.value);
+    var qtdAmigos = Number(input_qtd_amigos.value);
+
+    var valorPorAmigo = valorPizza / qtdAmigos;
+
+    div_resultado.innerHTML = `
+        Cada amigo vai pagar R$${valorPorAmigo} pela pizza<br>
+        `;
+
+    if (valorPorAmigo > 20) {
+      div_resultado.innerHTML += `
+            Deu ruim pizza muito cara !
+        `;
+    }
+  }
+</script>
