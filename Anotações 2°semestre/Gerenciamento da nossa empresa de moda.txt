@@ -1,0 +1,12 @@
+Ideias 
+- Carrinho virtual (QrCode)
+- Aplicativo mobile 
+- 
+
+Gerenciamento de indústria de modas:
+- Monitoramento de peças
+- Qualificação de clientes;
+- Gerneciamento e controle de produção, extração e importação de produtos (financeiro);
+- Divisão de setores (Produção, financeiro, etc);
+- Subnichos sobre os clientes (quem teve interesse, quem comprou, quem recusou, etc);
+- Sistemas de filtragem;

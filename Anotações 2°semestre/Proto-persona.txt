@@ -1,0 +1,11 @@
+O que é um proto persona?
+Uma proto-persona é uma representação fictícia de um grupo específico de usuários ou 
+clientes potenciais de um negócio ou produto. 
+Ela é criada com base em dados demográficos, comportamentais e psicológicos coletados através de pesquisas 
+e entrevistas com esses usuários.
+
+Como construir uma?
+1.Quem é o usuário (foto, nome e uma frase)
+2.Informações demográficas e comportamentais.
+3.Dores e necessidades.
+4.Potenciais soluções.

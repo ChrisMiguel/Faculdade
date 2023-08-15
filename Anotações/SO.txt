@@ -1,0 +1,9 @@
+Infraestrutura de TI:
+a. Infraestrtura de Ti seria uma forma de controlar todos os hardwares e softwares de um determinado ambiente.
+b. Para agregar valor a um determinado local ou instância, um exemplo seria o prédio da SPTECH, roteadores, wi-fi, Firewall e
+etc.
+c. Seriam eles: roteador, wi-fi, firewall, site institucional da faculdade, notebooks.
+
+2.
+a. Dar um caminho intermediário entre a máquina e o usuário seja ele profissional ou não.
+b.Programações mais complexas sem ajuda e com uma forma manual do usuario.
