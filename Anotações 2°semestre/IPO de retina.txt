@@ -1,0 +1,38 @@
+- IPO(Input process output) - 
+
+Nova forma de catraca
+- Controle de entrada e saída das pessoas do prédio
+
+
+Ideias:
+Utilização de retina na hora da entrada do usuário;
+Criação de tags para cada usuário e membro do prédio da sptech;
+
+- Porque a leitura da íris é mais eficaz? - 
+Leitura da íris
+
+Trata-se de uma maneira extremamente confiável de identificação de biometria, 
+isso porque a íris é uma membrana do olho humano que não se modifica ao longo de toda a vida, 
+tornando fraudes nesse tipo de registro de ponto, praticamente impossíveis.
+
+A IPO:
+- Input - 
+Vai cadastrar a retina de cada usuário (como já é formalmente usado no cadastro das digitais):
+
+- Process - 
+Vai pegar o registro da retina do usuário e comparar com as outras registradas no banco de dados para a liberação do mesmo;
+
+- Output - 
+Se a retina estiver cadastrada o usuário pode entrar e sair facilmente do prédio.
+
+Vantagens: 
+- Sistema único porque cada usuário contém uma retina diferente;
+- Por não se modificar ao longo do tempo, traz uma confiabilidade maior tornando fraudes inúteis;
+
+Desvantagens: 
+- Usa luz infravermelha e é um processo de detecção mais lento que requer o contato mais próximo e mais prolongado. 
+
+
+User story: 
+Eu Christian Miguel da faculdade Sptech quero uma relação maior do usuário com a confiabilidade da Sptech adaptando um sistema de registro de retina para a entrada
+das pessoas na sptech.

@@ -1,0 +1,6 @@
+Porcentagem de uso da CPU{Caso tenha algum ataque hacker}
+Uso da memória RAM em porcentagem (caso esteja usando demais)
+Instabilidade de rede 
+
+banco de dados (tabela pc)
+Porcentagem CPU, GPU e rede

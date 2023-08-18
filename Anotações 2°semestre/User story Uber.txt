@@ -1,0 +1,5 @@
+O principal sistema da Uber é o sistema que faz a ponte do usuário para o motorista;
+User story do uber:
+Eu Mariana de Alcatra Cilada estou no Shopping cidade São Paulo localizado na av. Paulista e quero chegar o mais rápido 
+possível na minha casa para jantar com meu pai, pois tenho fobia social e não gosto de ficar perto de muitas pessoas
+como nos transportes públicos.
