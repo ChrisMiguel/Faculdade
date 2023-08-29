@@ -1,0 +1,5 @@
+Big data: 
+- Estatísticas precisas de tal matéria;
+- Predição: dado valores atuais estes valores tem uma certa influência nas datas futuras;
+- Predição é inovadora para as empresas;
+- 
