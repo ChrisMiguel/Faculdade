@@ -3,3 +3,18 @@ Big data:
 - Predição: dado valores atuais estes valores tem uma certa influência nas datas futuras;
 - Predição é inovadora para as empresas;
 - 
+
+Estatística:
+- População: Lida com uma grande quantidade de dados (conjunto);
+- Amostra: Lida com uma parte da população (subconjunto);
+
+Sistemas: 
+
+Possíveis{determinado 
+	 {indeterminado
+
+Impossíveis{
+	   {
+
+Eq. Linear:
+Basicamente dados proporcionais sem ter uma constância muito variável dos dados.
