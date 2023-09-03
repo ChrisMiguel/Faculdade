@@ -1,0 +1,19 @@
+Integrantes:
+Christian Miguel,
+Eduardo Medina,
+Isabel,
+Guilherme, 
+Lívia Yasmin.
+
+Análise de requisitos:
+- Os clientes do amigo PET precisam de uma forma mais simples de fazer o cadastro 
+do usuário, porque em dias muito movimentados como na sexta, a fila de clientes
+enche e atrasa serviços;
+- É desejável dashboards sobre algumas informações para os clientes monitorarem o
+tempo deles;
+- Um agendamento pode ser mais do que só uma tosa do PET, pode ser um banho com 
+uma vacina, criando muitas vertentes para os agendamentos;
+- Uma comunicação melhorada é importante, porque aos finais de semana, qualquer
+atraso do PET gera consequências para os funcionários;
+- A forma de como é criada e atualizada as fichas dos PETs cria uma 
+desorganização enorme na hora dos atendimentos.
