@@ -4,6 +4,7 @@ Eduardo Medina,
 Isabel,
 Guilherme, 
 Lívia Yasmin.
+Tiago Navarro
 
 Análise de requisitos:
 - Os clientes do amigo PET precisam de uma forma mais simples de fazer o cadastro 
