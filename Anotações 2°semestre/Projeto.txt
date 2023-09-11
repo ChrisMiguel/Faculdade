@@ -1,0 +1,25 @@
+prazo - 08/09
+
+Console kotlin - todos/individual
+ 
+Métricas - isabel e chris
+
+Arrumar o pipefy - isabel e chris
+
+Organizar os códigos de linux - todos (whats)
+
+slides - todos - ja tem modelo
+ 
+responsividade login/cadastro arrumar input cadastro - guilherme
+
+dashboard - desejável
+
+fale conosco e footer - Livia
+
+index - nossos serviços, arrumar imagens - medina
+
+user story - tiago
+
+crud servidor/funcionario/infoServidores -  
+
+fluxograma helpdask -  
