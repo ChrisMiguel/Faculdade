@@ -22,7 +22,8 @@ a_coef_angular, b_coef_linear = solucao.slope, solucao.intercept
 print('A equação da reta é: y = {:.04f}x + {:.04f}'.format(a_coef_angular, b_coef_linear))
 #C
 def formula(a,b,x):
-    return a*x + b
+    return a*x + b
+
 
 def graph(a,b , x_range):
     x = TempoVenc 
