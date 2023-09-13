@@ -1,0 +1,60 @@
+Falas Chris:
+- Proto-Personas - 
+	As Proto-Personas são ideias geradas a partir de uma brainstorm com o nosso grupo 
+que vai concretizar uma persona, ou seja, um cliente com suas próprias características 
+para criar um caminho inicial de criação de perfis. As nossas duas proto-personas se 
+designam no Cláudio que é um CEO de banco e que não quer nenhuma falha nos seus hardwares, 
+sempre preocupado com o que pode vir pela frente.
+	Já do outro lado temos a Maria Luiza que está em fase de desenvolvimento e quer 
+o melhor do melhor serviço para ter uma tarefa completa mas sempre se alertando 
+com as atualizações do mundo virtual.
+	Aqui está apresentado nosso Lean UX Canvas, que vai explicar um pouco das nossas 
+ideias em cima de um problema que foi identificado nos hardwares. Em sequência temos: 
+Dores do cliente, ideia e soluções, quais clientes vão ser e os benefícios dado por nós
+da Security Bank.
+	As nossas user stories contam sobre alguns pedidos feitos pelos clientes a partir
+do que é proposto. Pode se identificar uma prontidão enorme de clientes que querem nosso 
+produto para uma melhora consecutiva na estrutura.
+
+User Story:
+Aqui estão algumas user Stories de clientes que querem uma ajuda da empresa Security Bank.
+De acordo com o contexto, as empresas passaram por algumas decadências, perdas de cliente
+e também um faturamento perdido em peso, ou seja, nós somos os melhores para ajudar VOCÊ,
+no monitoramento dos hardwares.
+
+Lean UX Canvas:
+
+
+- Cliente Linux - 
+Vou fazer o código para criar um usuário (não como root) e usar os códigos: 
+- lscpu
+- top 
+- free
+Que são referentes ao nosso projeto.
+
+Fala:	
+- lscpu - 
+O comando lscpu permite descobrir informações sobre a CPU (ou CPUs) instalada em seu 
+computador. Podemos visualizar dados sobre uma CPU ou núcleo em particular, ou sobre todos
+os processadores e núcleos de processamento de uma vez.
+
+- top -
+Equivalente ao gerenciador de tarefas do Windows, o comando top vai mostrar uma lista de 
+processos que estão em execução e o quanto de CPU cada processo usa. Ele é muito útil para
+monitorar o uso dos recursos do sistema, especialmente para saber qual processo deve ser 
+encerrado por consumir muitos recursos.
+
+E por fim...
+- free - 
+Comando free no Linux mostra a quantidade de memória total, em uso e disponível, bem como
+informações de cachê e swap.
+
+Abaixo o significado de cada campo:
+total:      Total de memória RAM instalada no sistema;
+used:       Memória utilizada (total – free – buffers – cache);
+free:       Memória disponível;
+shared:     Memória compartilhada entre os processos usando o tmpfs. Os processos podem 
+alocar memória que compartilham por exemplo com seus processos filhos;
+buffers:    Memória usada como área de transferência pelo kernel;
+cache:      Memória usada pelo cachê de páginas de memória;
+available   Memória disponível sem levar em conta a memória utilizada em buffers e cache.
