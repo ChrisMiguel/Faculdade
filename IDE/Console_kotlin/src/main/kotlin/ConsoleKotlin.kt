@@ -6,7 +6,7 @@ class CadastroUsuario() {
 }
 
 fun main() {
-    println("\n--------------------------SECURITY BANK------------------------------")
+    println("Bem vindo a Security Bank")
     val listaUsuarios = mutableListOf<CadastroUsuario>()
 
     while (true) {
@@ -25,14 +25,14 @@ fun main() {
         when (escolha) {
             1 -> {
                 println("\nVamos realizar seu Cadastro")
-                print("Digite seu nome: ")
+                print("Insira seu nome: ")
                 val nome = sn.next()
                 val usuario = CadastroUsuario()
                 usuario.nome = nome
 
                 var emailInvalido = false
                 while (!emailInvalido) {
-                    print("Digite seu email: ")
+                    print("Insira seu email: ")
                     val email = sn.next()
                     val arroba = email.indexOf('@')
                     val pontoCom = email.indexOf(".com")
@@ -41,14 +41,14 @@ fun main() {
                         println("Email inválido. Tente novamente.")
                     } else {
                         usuario.email = email
-                        println("O seu email Ã©: ${usuario.email}")
+                        println("O seu email é: ${usuario.email}")
                         emailInvalido = true
                     }
                 }
 
                 var senhaInvalida = false
                 while (!senhaInvalida) {
-                    print("Digite sua senha (min 8 caracteres): ")
+                    print("Insira sua senha (min 8 caracteres com 1 especial e número ): ")
                     val senha = sn.next()
                     val caracteresEspeciais = setOf('!', '@', '#', '$', '%', '&', '*')
                     if (senha.length < 8 ||
@@ -57,16 +57,16 @@ fun main() {
                         !senha.any { it.isDigit() } ||
                         !caracteresEspeciais.any { senha.contains(it) }
                     ) {
-                        println("Senha InvÃ¡lida")
+                        println("Senha Inválida")
                     } else {
-                        println("Sua senha Ã© VÃ¡lida")
+                        println("Sua senha é válida")
                         usuario.senha = senha
                         senhaInvalida = true
                     }
                 }
 
                 println("\n-------------------------------------------------------------------------------")
-                println("Cadastro Realizado com sucesso!")
+                println("Cadastro Realizado. Obrigado!")
                 println("-------------------------------------------------------------------------------")
                 listaUsuarios.add(usuario)
             }
@@ -79,11 +79,11 @@ fun main() {
 
                 if (usuario != null) {
                     var senhaNregistrado = false
-                    println("\nDigite sua Senha: ")
+                    println("\nInsira sua Senha: ")
                     while (!senhaNregistrado) {
                         val senha = sn.next()
                         if (senha != usuario.senha) {
-                            print("\nSenha invÃ¡lida, tente novamente: ")
+                            print("\nSenha inválida, tente novamente: ")
                         } else {
                             println("\n-------------------------------------------------------------------------------")
                             println("Seja Bem-vindo ${usuario.nome}")
@@ -92,7 +92,7 @@ fun main() {
                         }
                     }
                 } else {
-                    println("E-mail nÃ£o registrado, tente novamente!")
+                    println("E-mail não registrado, tente novamente!")
                 }
             }
 
@@ -102,7 +102,7 @@ fun main() {
             }
 
             else -> {
-                println("OpÃ§Ã£o invÃ¡lida. Tente novamente.")
+                println("Opção inválida. Tente novamente.")
             }
 
         }
