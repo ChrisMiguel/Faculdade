@@ -1,0 +1,73 @@
+import java.util.Scanner
+
+fun main() {
+    val scanner = Scanner(System.`in`)
+    val usuarios = mutableMapOf<String, MutableMap<String, String>>() // Usaremos um mapa aninhado para armazenar nome, email e senha
+
+    while (true) {
+        println("Selecione uma opção:")
+        println("1 - Cadastrar")
+        println("2 - Login")
+        println("3 - Sair")
+
+        val opcao = scanner.nextInt()
+
+        when (opcao) {
+            1 -> cadastrarUsuario(usuarios, scanner)
+            2 -> fazerLogin(usuarios, scanner)
+            3 -> {
+                println("Saindo do programa.")
+                return
+            }
+            else -> println("Opção inválida. Tente novamente.")
+        }
+    }
+}
+
+fun isEmailValid(email: String): Boolean {
+    return email.contains("@")
+}
+
+fun cadastrarUsuario(usuarios: MutableMap<String, MutableMap<String, String>>, scanner: Scanner) {
+    println("Cadastro de Usuário")
+    print("Digite seu nome: ")
+    val nome = scanner.next()
+
+    print("Digite seu email: ")
+    val email = scanner.next()
+
+    if (!isEmailValid(email)) {
+        println("Email inválido. O email deve conter '@'.")
+        return
+    }
+
+    print("Digite sua senha: ")
+    val senha = scanner.next()
+
+    val usuarioInfo = mutableMapOf("nome" to nome, "senha" to senha)
+    usuarios[email] = usuarioInfo
+    println("Cadastro realizado com sucesso!")
+}
+
+fun fazerLogin(usuarios: MutableMap<String, MutableMap<String, String>>, scanner: Scanner) {
+    println("Login")
+    print("Digite seu email: ")
+    val email = scanner.next()
+
+    if (!isEmailValid(email)) {
+        println("Email inválido. O email deve conter '@'.")
+        return
+    }
+
+    print("Digite sua senha: ")
+    val senha = scanner.next()
+
+    val usuarioInfo = usuarios[email]
+
+    if (usuarioInfo != null && usuarioInfo["senha"] == senha) {
+        val nome = usuarioInfo["nome"] ?: ""
+        println("Bem-vindo $nome, você se logou na SecurityBank!")
+    } else {
+        println("Usuário ou senha incorretos. Tente novamente.")
+    }
+}
