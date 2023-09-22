@@ -29,9 +29,9 @@ def graph(a,b , x_range):
     plt.scatter(velocidade, brilho)
     plt.plot(x,y)
     plt.xticks(np.arange(5, 40, step = 5))
-    plt.xlabel('CPU')
-    plt.ylabel('Temperatura')
-    plt.title('Relação da temperatura da CPU')
+    plt.xlabel('Utilização')
+    plt.ylabel('CPU')
+    plt.title('Relação da utilização da CPU')
     plt.grid()
     plt.show()
     
