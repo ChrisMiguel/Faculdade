@@ -1,0 +1,27 @@
+- 6Tracker -
+Entendimento:
+De acordo com a documentação a empresa 6Tracker quer monitorar os componentes de hardware dos servidores das empresas de data tech (?), para monitorar o rastreio documentação e o informe integral de possíveis invasões.
+
+
+Perguntas: 
+1 - 1.3	Por que nosso monitoramento é tão importante?
+O vazamento de dados tem sido uma das maiores causas de perdas em grandes empresas. O Brasil estando em terceiro lugar dentre os países com o maior índice de vazamento de dados é sinal suficiente para alarmar as empresas de big data. 
+
+1.1 Vai monitorar BigData ou DataTech?
+
+---------2 - Detectar possíveis programas maliciosos. Como?----------
+
+3 - Vista na "Restrição":  O sistema não será responsável pela comunicação entre os funcionários. O slack vai ter qual funcionalidade?
+
+4 - Documentação nos "Objetivos": Detectar possíveis programas maliciosos. 
+Nas "Restrições": Será monitorado somente os componentes de hardware.
+
+5 - Encontrado no GitHub: Nosso site disponibilizará uma plataforma onde o administrador terá acesso às informações de hardware do servidor, do estado que a empresa se localiza e seus funcionários terão acesso ao ambiente do estado onde se encontram.
+
+6 - Inovações: Previsão de vida útil dos componentes de hardware. (?)
+
+7 - Feedback do diagrama de visão.
+
+8 - Revisar a proto-persona.
+
+Insights por conta dos comentários do Prof Edu que explicou sobre vazamento de dados com USB. "90%" dos problemas e vazamentos acontecem por conta dos plugins de usb nos servidores.

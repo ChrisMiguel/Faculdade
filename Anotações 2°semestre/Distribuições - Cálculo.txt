@@ -1,0 +1,5 @@
+Distribuições:
+- Normal -
+Gráfico que contém os dados próximos da média onde o formato do gráfico fica me forma de sino.
+- Barril - 
+Gráfico que geralmente é usado para distribuição de idade e sexo. De ano em ano essa distribuição vai mudando de acordo com a população. 

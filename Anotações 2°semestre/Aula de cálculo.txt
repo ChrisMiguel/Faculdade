@@ -1,0 +1,8 @@
+Aula de cálculo
+Excel pode ser usado como base de banco de dados por causa das planilhas que podem separar os dados por nomes conceituais. Os dados que vão para o -R podem ser usados para várias ações.
+Dados "RAW" (cru), dados que enviados diretamente da fonte que são usados para serem tratados depois. O OpenHardware foi usado para pegar esses dados onde no mesmo o filtro pode ser usado, filtro de pegar somente dados da CPU ou só a temperatura do mesmo, entre vários outros. 
+O gráfico cria oportunidade para vizualizar os dados de forma mais concisa independente da forma do gráfico. Todo gráfico precisa de um contexto por trás para ser descrtivo e entendido. Retroalimentação é usada a partir do tratamento de dados para criar gráficos que tem itens e dados em comuns. 
+
+Dados grafos:
+Tipos de bancos de dados NoCycle que tem uma forte associação na sugestão de itens.
+
