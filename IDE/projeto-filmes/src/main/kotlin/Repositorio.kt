@@ -12,7 +12,7 @@ class Repositorio {
     }
     fun cadastrar(Conexao: Filme){
         JdbcTemplate.update("""
-            insert into pizza (nome, diretor, indicadoOscar, custoProducao) values 
+            insert into Filme (nome, diretor, indicadoOscar, custoProducao) values 
 ('${Filme.nome}', ${Filme.diretor}, ${Filme.indicadoOscar}, ${Filme.custoProducao})
 """)
 

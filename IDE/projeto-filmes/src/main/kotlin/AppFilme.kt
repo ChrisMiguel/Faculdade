@@ -4,6 +4,7 @@ fun main(){
     Conexao.criarTabelas()
     val repositorio = Repositorio()
     repositorio.iniciar()
+
     while(true){
         val filme:Int = JOptionPane.showInputDialog("Escolha uma das alternativas abaixo:/n 1 - Adicionar Filme/n 2 - Consultar Filme/n 3 - Exluir filme/n 4 - Sair").toInt()
 if(filme == 1) {
