@@ -28,7 +28,7 @@ dados
 dados2 <- dados
 dados2[dados2$alt>3,]
 fol<-scan()
-readline(prompt = "")
+readline(prompt = "Escolha um valor")
 p <- 20000
 n <- 2000
 set.seed(15)
