@@ -5,7 +5,7 @@ fumante.f <- factor(fumante.n,
                     ordered = TRUE)
 table(fumante.f)
 table(escolaridade)
-prop.table(table(fumante.f))
+
 mean(fumante.n)
 fumante.n
 par(mfrow = c(1,2))
