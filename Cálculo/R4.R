@@ -1,5 +1,5 @@
 Vendedor <- c("Ana","Flávia","Pedro","Mariana","Ana","Flávia","Pedro","Mariana")
-Dia <- rep(c(1, 2),each=4)
+Dia <- rep(c(1,2),each=4)
 Vendedor
 Dia
 Produto <- c("saia", "casaco","vestido","meia","calçaFlaire","calçaSkinny","calçaSkinny","manta")
@@ -12,15 +12,16 @@ Quadro1$PrecoUnit<-PrecoUnit
 Quadro1$CustoUnit<-CustoUnit
 Quadro1$Faturamento<-Faturamento
 Quadro1
-hist(Quadro1$Produtos,xlab='Quantidade',ylab='Produto')
-Faturamento <- c(145.00, 578.00, 320.00, 195.00, 720.00, 0.0, 720.00, 376.00)
-vendasAna = subset(Quadro1, Vendedor == 'Ana')
-vendasFlavia = subset(Quadro1, Vendedor == 'Flavia')
-vendasPedro = subset(Quadro1, Vendedor == 'Pedro')
-vendasMariana = subset(Quadro1, Vendedor == 'Mariana')
-hist(Quadro1$Faturamento, xlab='Faturamento', ylab='Vendedor')
-AnaFaturamento = sum(vendasAna$Quantidade * vendasAna$PrecoUnit)
-PedroFaturamento = sum(vendasPedro$Quantidade * vendasPedro$PrecoUnit)
-MarianaFaturamento = sum(vendasMariana$Quantidade * vendasMariana$PrecoUnit)
-FlaviaFaturamento = sum(vendasFlavia$Quantidade * vendasFlavia$PrecoUnit)
-barplot(Faturamento)
+FaturamentoAna = sum(Quadro1[1,5],Quadro1[5,5])
+FaturamentoAna
+FaturamentoFlavia = sum(Quadro1[2,5],Quadro1[6,5])
+FaturamentoFlavia
+FaturamentoPedro = sum(Quadro1[3,5],Quadro1[7,5])
+FaturamentoPedro
+FaturamentoMariana = sum(Quadro1[4,5],Quadro1[8,5])
+FaturamentoMariana
+Faturamentos = c(FaturamentoAna,FaturamentoFlavia, FaturamentoMariana, FaturamentoPedro)
+barplot(Faturamentos,
+        main = "Faturamento final dos funcionários",
+        ylab = "Valor (em R$)",
+        xlab = "Ana                Flavia               Mariana                   Pedro")
