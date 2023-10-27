@@ -1,36 +1,45 @@
-class Carro {
-
-    var modelo: String = ""
-    var ligando: Boolean = false
-    var velocidade: Double = 0.0
-
-    fun ligar(boolean: Boolean) {
-        ligando == true
+class Carro(val modelo: String, private var ligado: Boolean, private var velocidade: Double) {
+    fun ligar() {
+        ligado = true
     }
 
-    fun desligar(boolean: Boolean) {
+    fun desligar() {
         if (velocidade == 0.0) {
-            ligando == false
-        }
-        fun acelerar(double: Double) {
-            val aumento = velocidade * 25 / 100
-            if(velocidade == 0.0){
-            velocidade == 10.0
-            }
-            velocidade += aumento
-            if (velocidade > 180.00) {
-                ligando == false
-            }
-        }
-
-        fun freiar(double: Double){
-            velocidade -= 3.0
-            if(velocidade < 0.0){
-                velocidade == 0.0
-            }
+            ligado = false
         }
     }
-fun getVelocidade(): Double {
-    return velocidade
-}
+
+    fun freiar(): Double {
+        if (ligado) {
+            velocidade -= 3.0
+            if (velocidade < 3.0) {
+                velocidade = 0.0
+                return velocidade
+            }
+            return velocidade
+        } else {
+            return velocidade
+        }
+    }
+    fun acelerar(): Double {
+        return if (ligado) {
+            if (velocidade == 0.0) {
+                velocidade = 10.00
+                velocidade
+            } else {
+                velocidade += velocidade * 0.25
+                if (velocidade >= 180.00) {
+                    velocidade = 180.00
+                }
+                velocidade
+            }
+        } else {
+            velocidade
+        }
+    }
+
+
+    fun getVelocidade(): Double{
+        return velocidade
+    }
 }
