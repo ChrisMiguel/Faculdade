@@ -1,6 +1,6 @@
 class CachorroRaca:Cachorro() {
-    override fun comer(comida: String, quantidadeGramas: Double): String {
-        return
+    override fun Digestao(): Double {
+        return 0.5
     }
 
     override fun correAoVerMoto(): Boolean {

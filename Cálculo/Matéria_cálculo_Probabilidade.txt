@@ -1,0 +1,46 @@
+Cálculo computacional
+
+Distribuição Binomial: 
+Para que uma situação possa se enquadrar em uma distribuição binomial, deve atender as seguintes condições:
+• São realizadas n repetições (tentativas) independentes;
+• Cada tentativa é uma prova de Bernoulli (somente podem ocorrer dois possíveis resultados); um ensaio de
+Bernoulli é um conceito do domínio da teoria das probabilidades que corresponde a uma experiência aleatória
+que só permite dois resultados possíveis, verdadeiro ou falso, e cuja probabilidade de sucesso permanece
+constante em qualquer experiência. O conceito recebeu o nome como homenagem a Jakob Bernoulli.
+• A probabilidade p de sucesso em cada prova é constante.
+Se uma situação atende a todas as condições anteriores, então a variável aleatória X será igual ao número de
+sucessos obtidos nas n tentativas e terá uma distribuição binomial com n tentativas e p probabilidades de sucesso.
+Simbolicamente, temos X ~B(n,p) com a interpretação: A variável aleatória X tem distribuição binomial (B) com n
+ensaios e uma probabilidade p de sucesso (em cada ensaio).
+
+Análise combinatória:
+Permutação de n objetos é o número de maneiras diferentes que esses elementos podem ser arrumados num grupo:
+𝑃𝑛 = 𝑛!
+• Arranjos de n objetos tomados em grupos de r de cada vez, com 𝑛 ≥ 𝑟. Perceba que a permutação é um caso
+especial de arranjo, onde 𝑛 = 𝑟:
+𝐴𝑛,𝑟 =
+𝑛!
+(𝑛 − 𝑟)!
+• Combinações: nas permutações (ou arranjos) a ordem dos objetos importa, assim “abc” é uma permutação
+distinta de “bca”. Em muitos problemas, entretanto, interessa-nos apenas a escolha dos objetos, sem
+distinção da ordem em que eles aparecem. Tais escolhas são chamadas combinações. O número de
+combinações de n objetos tomados r de cada vez é:
+𝐶𝑛,𝑟 = (
+𝑛
+𝑟
+) =
+𝑛!
+𝑟! (𝑛 − 𝑟)!
+
+Utilidades de dados limite:
+A utilização de grandes grupos de dados é ótimo para uma análise sucinta dos dados, com progressão para gráficos e várias outras coisas. Porém o caso é diferente, se o dado não agregar mais no valor dos dados, ele não será útil para a análise, trazendo uma perda de tempo. Ou seja, o uso de dados é importante a partir da diferença que ele entrega, já o contrário, a quantidade de dados só vai dar trabalho para o analista.
+
+Clusters:
+Basicamente servidores com computadores fracos e em agrupamentos.
+
+Probabilidade binomial:
+A taxa de sucesso é obviamente a taxa de sucesso mais a taxa de insucesso para obter 100%, ou seja, total. 
+
+Distribuição normal:
+A questão dos gráficos sempre trazem atualizações para os analistas, uma delas é o gráfico de sino que traz um gráfico de "montanha", com uma percepção de concentração de dados no meio do gráfico. Essa distribuição tem vários tipos de gráficos com diferentes e variados dados, um deles é o de violão, começa grande, o meio se afina e o final aumenta.
+Em questão do gráfico de "montanha", no meio dele há 70% de aumento entre o primeiro e terceiro quartil, mais da metade gráfico. 

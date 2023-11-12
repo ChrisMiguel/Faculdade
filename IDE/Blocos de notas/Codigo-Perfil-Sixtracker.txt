@@ -1,0 +1,626 @@
+APP.JS
+
+var perfilRouter = require("./src/routes/perfil");
+app.use("/perfil", perfilRouter);
+
+ROUTES
+
+perfil.js
+
+var express = require("express");
+var router = express.Router();
+
+var perfilController = require("../controllers/perfilController");
+
+router.put("/inserirImg", function (req, res) {
+    perfilController.inserirImg(req, res);
+});
+
+router.post("/consultar", function (req, res) {
+    perfilController.consultar(req, res);
+});
+
+router.put("/atualizarNome", function (req, res) {
+    perfilController.atualizarNome(req, res);
+});
+
+router.put("/atualizarEmail", function (req, res) {
+    perfilController.atualizarEmail(req, res);
+});
+
+router.put("/atualizarEndereco", function (req, res) {
+    perfilController.atualizarEndereco(req, res);
+});
+
+router.put("/atualizarTelefone", function (req, res) {
+    perfilController.atualizarTelefone(req, res);
+});
+
+router.put("/AtualizarDescricao", function (req, res) {
+    perfilController.atualizarDescricao(req, res);
+})
+
+router.post("/verificar", function (req, res) {
+    perfilController.verificar(req, res);
+})
+
+
+module.exports = router;
+
+MODELS
+
+var database = require("../database/config")
+
+function inserirImg(fkFuncionario, imagem) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", idUsuario,imagem);
+    
+    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
+    //  e na ordem de inserção dos dados.
+    var instrucao = `
+        UPDATE perfil SET imagem = '${imagem}' WHERE fkFuncionario = ${fkFuncionario} ;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function consultar(idFuncionario) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ", idFuncionario)
+    var instrucao = `
+        SELECT * FROM perfil WHERE fkFuncionario = '${fkFuncionario}';
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function atualizarNome(nome, idFuncionario) {
+    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function editar(): ", nome, idFuncionario)
+    var instrucao = `
+    UPDATE Funcionario SET nome = '${nome}' WHERE idFuncionario = ${idFuncionario};
+    `;
+    console.log(instrucao);
+    return database.executar(instrucao);
+}
+
+function atualizarEmail(email, idFuncionario) {
+    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function editar(): ", email, idFuncionario)
+    var instrucao = `
+    UPDATE Funcionario SET email = '${email}' WHERE idFuncionario = ${idFuncionario}; 
+    `;
+    console.log(instrucao);
+    return database.executar(instrucao);
+}
+
+function atualizarEndereco(fkEndereco, fkFuncionario) {
+    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function editar(): ", fkEndereco, idFuncionario)
+    var instrucao = `
+    UPDATE perfil SET fkEndereco = '${fkEndereco}' WHERE fkFuncionario = ${idFuncionario}; 
+    `;
+    console.log(instrucao);
+    return database.executar(instrucao);
+}
+
+function atualizarTelefone(telefone, idFuncionario) {
+    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function editar(): ", telefone, idFuncionario)
+    var instrucao = `
+    UPDATE Funcionario SET telefone = '${telefone}' WHERE idFuncionario = ${idFuncionario}; 
+    `;
+    console.log(instrucao);
+    return database.executar(instrucao);
+}
+
+function atualizarDescricao(fkFuncionario, descricao) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", fkFuncionario, descricao);
+    
+    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
+    //  e na ordem de inserção dos dados.
+    var instrucao = `
+        INSERT INTO perfil (fkFuncionario, descricao) VALUES ('${fkFuncionario}', '${descricao}');
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function verificar(fkFuncionario) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar(${fkFuncionario}))");
+    var instrucao = `
+        SELECT * FROM perfil WHERE fkFuncionario = '${idFuncionario}' ;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+
+module.exports = {
+    inserirImg,
+    consultar,
+    atualizarNome,
+    atualizarEmail,
+    atualizarEndereco,
+    atualizarTelefone,
+    atualizarDescricao,
+    verificar
+}
+
+
+CONTROLLERS
+
+var perfilModel = require("../models/perfilModels");
+
+function inserirImg(req, res) {
+
+    var idFuncionario = req.body.idServer;
+    var imagem = req.body.imgServer;
+    // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+    perfilModel.inserirImg(fkFuncionario, imagem)
+        .then(
+            function (resultado) {
+                res.json(resultado);
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                console.log(
+                    "\nHouve um erro ao realizar o cadastro! Erro: ",
+                    erro.sqlMessage
+                );
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
+function consultar(req, res) {
+    var idFuncionario = req.body.idServer;
+
+    perfilModel.consultar(idFuncionario)
+        .then(
+            function (resultado) {
+                console.log(`\nResultados encontrados: ${resultado.length}`);
+                console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+
+                if (resultado.length == 1) {
+                    console.log(resultado);
+                    res.json(resultado[0]);
+                } else if (resultado.length == 0) {
+                    res.status(403).send("ERRO");
+                } else {
+                    res.status(403).send("MAIS DE UM LOGIN COM O MESMO USUARIO");
+                }
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
+function atualizarNome(req, res) {
+    var nome = req.body.nomeServer
+    var idFuncionario = req.body.idServer
+
+    perfilModel.atualizarNome(nome, Funcionario)
+        .then(
+            function (resultado) {
+                res.json(resultado);
+            }
+        )
+        .catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+
+}
+function atualizarEmail(req, res) {
+    var email = req.body.emailServer;
+    var idFuncionario = req.body.idServer
+
+    perfilModel.atualizarEmail(email, idFuncionario)
+        .then(
+            function (resultado) {
+                res.json(resultado);
+            }
+        )
+        .catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+
+}
+function atualizarEndereco(req, res) {
+    var Endereco = req.body.EnderecoServer;
+    var idFuncionario = req.body.idServer
+
+    perfilModel.atualizarEndereco(Endereco, idFuncionario)
+        .then(
+            function (resultado) {
+                res.json(resultado);
+            }
+        )
+        .catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+
+}
+
+function atualizarTelefone(req, res) {
+    var telefone = req.body.telefoneServer;
+    var idFuncionario = req.body.idServer
+
+    perfilModel.atualizarTelefone(telefone, idFuncionario)
+        .then(
+            function (resultado) {
+                res.json(resultado);
+            }
+        )
+        .catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+
+}
+
+function atualizarDescricao(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    var fkFuncionario = req.body.idServer;
+    var descricao = req.body.descricaoServer;
+
+    // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+    perfilModel.atualizarDescricao(fkFuncionario, descricao)
+        .then(
+            function (resultado) {
+                res.json(resultado);
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                console.log(
+                    "\nHouve um erro ao realizar o cadastro! Erro: ",
+                    erro.sqlMessage
+                );
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
+function verificar(req, res) {
+    var fkFuncionario = req.body.idServer;
+    perfilModel.verificar(fkFuncionario)
+        .then(function (resultado) {
+            if (resultado.length == 1) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
+        }).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
+
+module.exports = {
+    inserirImg,
+    consultar,
+    atualizarNome,
+    atualizarEmail,
+    atualizarEndereco,
+    atualizartelefone,
+    atualizarDescricao,
+    verificar
+}
+
+
+
+PERFIL.HTML
+
+
+function pegarDados() {
+        fetch("/perfil/consultar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idServer: idFuncionarioVar,
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+                if (resposta.length != 0) {
+
+                    resposta.json().then(json => {
+                        console.log(json);
+                        console.log(JSON.stringify(json));
+
+                        nome.value = json.nome
+                        email.value = json.email
+                        iptImg.value = json.imagem
+                    });
+                }
+            } else {
+
+                console.log("Houve um erro ao tentar autenticar o Quizz!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    // finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+    })()
+
+    function imgSubmit() {
+        var imgVar = iptImg.value
+        fetch("/perfil/inserirImg", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                idServer: idFuncionarioVar,
+                imagemServer: imgVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+
+                sessionStorage.IMG_USUARIO = imgVar
+
+
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            // finalizarAguardar();
+        });
+        window.location = "profile.html"
+    }
+
+    function perfilSubmit() {
+        fetch("/perfil/atualizarNome", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idServer: idFuncionarioVar,
+                nomeServer: nome.value
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+                if (resposta.length != 0) {
+
+                    resposta.json().then(json => {
+                        console.log(json);
+                        console.log(JSON.stringify(json));
+                        sessionStorage.NOME_USUARIO = nome.value
+                        nome.value = ''
+                    });
+                }
+            } else {
+
+                console.log("Houve um erro ao tentar autenticar o Quizz!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    // finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        fetch("/perfil/atualizarEmail", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idServer: idFuncionarioVar,
+                emailServer: email.value
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+                if (resposta.length != 0) {
+                    resposta.json().then(json => {
+                        console.log(json);
+                        console.log(JSON.stringify(json));
+                        sessionStorage.EMAIL_USUARIO = email.value
+                        email.value = ''
+                    });
+                }
+            } else {
+
+                console.log("Houve um erro ao tentar autenticar o Quizz!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    // finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        fetch("/perfil/atualizarEndereco", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idServer: idFuncionarioVar,
+                EnderecoServer: Endereco.value
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+                if (resposta.length != 0) {
+
+                    resposta.json().then(json => {
+                        console.log(json);
+                        console.log(JSON.stringify(json));
+
+                    });
+                }
+            } else {
+
+                console.log("Houve um erro ao tentar");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    // finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+        pegarDados()
+    }
+
+    function atualizarDescricao() {
+        var descricaoVar = descricao.value
+        var avaliacaoVar = avaliacaoFeedback.value
+        fetch("/perfil/atualizarDescricao", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idServer: fkFuncionarioVar,
+                descricaoServer: descricaoVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+
+
+
+                // finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar a descricao!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            // finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    function verificarDescricao() {
+        fetch("/perfil/verificar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({idServer: idFuncionarioVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO verificar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+            
+                if (resposta.status == 204) {
+
+                        
+                } else {
+                    resposta.json().then(json => {
+                        console.log(json);
+                        console.log(JSON.stringify(json));
+    
+                    });
+                }
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    // finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+
+    verificarDescricao()
+
+    function atualizarTelefone() {
+        var descricaoVar = descricao.value
+        var avaliacaoVar = avaliacaoFeedback.value
+        fetch("/perfil/atualizarTelefone", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idServer: fkFuncionarioVar,
+                telefoneServer: telefoneVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+
+
+
+                // finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar a descricao!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            // finalizarAguardar();
+        });
+
+        return false;
+    }
+

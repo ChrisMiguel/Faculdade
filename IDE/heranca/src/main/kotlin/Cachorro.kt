@@ -1,11 +1,10 @@
 open class Cachorro {
     var nome: String = ""
     var peso: Double = 0.0
-    val idade: Int = 0
+    var idade: Int = 0
 
-    open fun comer(comida:String, quantidadeGramas:Double):String{
-        val quantidadeCerta = quantidadeGramas * 100
-        peso += quantidadeCerta
+    fun comer(comida:String, quantidadeGramas:Double):String{
+        peso += (quantidadeGramas/1000) * Digestao()
         return "Cahorro comendo $comida"
     }
 
@@ -17,7 +16,11 @@ open class Cachorro {
         return 100.0
     }
 
-    fun getDescricao():String{
-        return "O cachorro $nome tem $idade anos e pesa $peso"
+    open fun getDescricao():String{
+        return "O cachorro $nome tem $idade anos e pesa ${peso}kg"
+    }
+
+    open fun Digestao(): Double {
+        return 1.0
     }
 }
